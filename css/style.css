@@ -1,8 +1,8 @@
 .form_container {
-    margin-top: 210px;
+    margin-top: 195px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items:center;
 }
 .form_o{
     
@@ -67,8 +67,9 @@
 }
 
 .topnav_register{
-    margin-top: 7px;
-    margin-left: 7px
+    margin-top: 20px;
+    justify-content: center;
+    display:flex;
 }
 .container_button{
     display: flex;
