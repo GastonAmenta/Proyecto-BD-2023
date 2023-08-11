@@ -4,6 +4,14 @@
     align-items: center;
     justify-content: center;
 }
+.form_o{
+    
+        
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    
+}
 
 .container{
     background-color: #EBEBEB;
@@ -49,6 +57,13 @@
 .div_href_login{
     margin-top: 7px;
     margin-left: 3px;
+}
+.div_href_login2{
+    margin-top: 7px;
+    margin-left: 3px;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
 }
 
 .topnav_register{
