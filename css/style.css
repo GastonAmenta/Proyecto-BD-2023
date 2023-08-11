@@ -1,0 +1,14 @@
+.container
+{
+    background-color: #EBEBEB;
+    width: 100%;
+    height: 500px;
+}
+.container-header img{
+    width: 200px;
+    height: 100px;
+}
+
+.carousel-inner{
+    border-radius: 10px;
+}
