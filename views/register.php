@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    
-    <div>
+       
 
+<div class="form_container">
         <form action="">
-            <input type="text" id="name" placeholder="Nombre">
-            <input type="text" id="cuil" placeholder="CUIL/CUIT">
-            <input type="text" id="surname" placeholder="Apellido">
-            <input type="email"id="email" placeholder="Email">            
-            <input type="password" id="password" placeholder="Contraseña">
-            <input type="password" id="conf_password" placeholder="Repetir contraseña">
-
+            <div> <input type="text" id="name" placeholder="Nombre"> </div>
+            <div> <input type="text" id="cuil" placeholder="CUIL/CUIT"> </div>
+            <div> <input type="text" id="surname" placeholder="Apellido"> </div>
+            <div> <input type="email"id="email" placeholder="Email"> </div>            
+            <div> <input type="password" id="password" placeholder="Contraseña"> </div>
+            <div> <input type="password" id="conf_password" placeholder="Repetir contraseña"> </div>
         </form>
-
-    </div>
-
+</div>
 
 
 
-</body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
