@@ -1,7 +1,9 @@
-<div class="topnav_register">
-    <a href="../index.php">
-        <img src="../img/banco_provincia.png" alt="banco_provincia.pnh">
-    </a>
+<div class= "topnav_register">
+    <div class = "hola">
+        <a href= "../index.php">
+            <img src="../img/banco_provincia.png" alt="banco_provincia.pnh">
+        </a>
+    </div>        
 </div>
 
 <div class = "form_container">
