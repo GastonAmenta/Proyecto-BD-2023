@@ -1,12 +1,17 @@
-<div>
-<form action="../controllers/login.php" method="POST">
-    
-<input type="text" name="dni" placeholder="Ingrese su numero de DNI"></input> <br>
-<input type="password" name="clave" placeholder="Ingrese su contraseña"></input> <br>
-<input type="submit"></input>
+<div class="form_container">
+    <form action="../controllers/login.php" method="POST">
 
+        <input class="input_reg_form" type="text" name="dni" placeholder="Ingrese su DNI"></input> <br>
+        <input type="password" name="clave" placeholder="Ingrese su contraseña"></input> <br>
+        <input type="submit"></input> <br>
+    </form>
+</div>
+<div class="div_href_login2">
 
-</form>
-
+<br> ¿No tenes cuenta?
+</div>
+<div class="div_href_login2">
+    <a class="href_login" href="">Registrate</a>
+</div>
 
 </div>
