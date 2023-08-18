@@ -40,9 +40,19 @@
                 <div class="container_logo">
                     <img src="../img/pngwing.com.png" alt="">
                 </div>
+                <?php 
+                
+                if(!$_SESSION["user"]){
+
+                 ?>
                 <div class="container_info2">
                     <a href="../controllers/login.php">Iniciar Sesión</a>
                 </div>
+                <?php } else{ ?>
+                    <div class="container_info2">
+                    <a href="">Bienvenido <?php echo($_SESSION["user"]["nombre"]) ?></a>
+                </div>
+               <?php }?>
             </div>
         </div>
     </div>

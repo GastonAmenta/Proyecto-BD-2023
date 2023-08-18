@@ -15,3 +15,8 @@ if( !$conn ) {
      die( print_r( sqlsrv_errors(), true));
 }
 */
+
+$conn = mysqli_connect('localhost', 'root', '', 'banco_provincia');
+if (!$conn) {
+  die('Error de Conexión (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
+}
