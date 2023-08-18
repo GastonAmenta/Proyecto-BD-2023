@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="container_login-padre" style="">
+        <div class="container_login-padre" <?php (isset($_SESSION['usuarios'])) ? "style: visibility: hidden;" : " ";?> >
             <div class="container_login">
                 <div class="container_logo">
                     <img src="../img/pngwing.com.png" alt="">
