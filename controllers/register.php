@@ -1,6 +1,8 @@
 <?php
 
-if (!isset($_GET)){
+require_once "../includes/config.php";
+
+if (!isset($_POST)){
     
     
 }

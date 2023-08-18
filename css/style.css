@@ -1,15 +1,22 @@
 .form_container {
-    margin-top: 160px;
+    margin-top: 140 px;
     display: flex;
     justify-content: center;
     align-items:center;
 }
+
+.form_container_1{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form_o{        
         display:flex;
         align-items: center;
         justify-content: center;    
 }
-
 
 .container_img{
     width: 200px;
@@ -26,7 +33,10 @@
 }
 
 .input_reg_form{
-    margin-top: 15px;
+    margin-top: 15px;    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .btn_reg_form{
@@ -143,4 +153,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; /* Para Firefox */
+}
+
+.register_select{
+    margin-top: 4px;
+    width: 270px;
+    margin-left: 43%;
 }
