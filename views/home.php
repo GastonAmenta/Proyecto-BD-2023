@@ -35,13 +35,51 @@
                 </div>
             </div>
         </div>
-        <div class="container_login-padre">
+        <div class="container_login-padre" <?php (isset($_SESSION['user'])) ? "style: visibility: hidden;" : " ";?> >
             <div class="container_login">
                 <div class="container_logo">
                     <img src="../img/pngwing.com.png" alt="">
                 </div>
+                <?php 
+                
+                if(!$_SESSION["user"]){
+
+                 ?>
                 <div class="container_info2">
                     <a href="../controllers/login.php">Iniciar Sesión</a>
+                </div>
+                <?php } else{ ?>
+                    <div class="container_info2">
+                    <a href="">Bienvenido <?php echo($_SESSION["user"]["nombre"]) ?></a>
+                </div>
+               <?php }?>
+            </div>
+        </div>
+        <div class="container_login loged">
+            <div class="container_logo">
+                <div class="container_cards">
+                    <a href="#">
+                        <img src="../img/card.png" alt="">
+                        <p>Mis tarjetas</p>
+                    </a>
+                </div>
+                <div class="container_prestamos">
+                    <a href="#">
+                        <img src="../img/prestamo.png" alt="">
+                        <p>prestamos</p>
+                    </a>
+                </div>
+                <div class="container_credito">
+                    <a href="#">
+                        <img src="../img/dinero.png" alt="">
+                        <p>Creditos</p>
+                    </a>
+                </div>
+                <div class="container_profile">
+                    <a href="#">
+                        <img src="../img/pngwing.com.png" alt="">
+                        <p>Mi perfil</p>
+                    </a>
                 </div>
             </div>
         </div>

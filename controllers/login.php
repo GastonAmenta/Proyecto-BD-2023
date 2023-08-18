@@ -1,9 +1,25 @@
 <?php
 require_once "../includes/config.php";
+//session_start();
 
 if (!empty($_POST)) {
     $dni = $_POST['dni'];
+    $email = $_POST['email'];
     $clave = $_POST['clave'];
+
+    $sqlLogin = "SELECT * FROM usuarios WHERE DNI='" . trim($dni) . "' AND email='". trim($email)."' AND clave='".trim($clave)."' AND fecha_baja IS NULL";
+    $resLogin = mysqli_query($conn, $sqlLogin);
+    if(!$resLogin){
+        die("Error de consulta: " . mysqli_error($conn));
+    }
+    $rowLogin = mysqli_fetch_array($resLogin, MYSQLI_ASSOC);
+    $_SESSION["user"] = $rowLogin;
+    session_start();
+    print_r($_SESSION["user"]);
+   // header('Location: home.php');
+
+
+
 }
 
 

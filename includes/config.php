@@ -1,7 +1,6 @@
 <?php
-/*
 
-todo esto es requerido para conectarse a Microsoft sql server
+/*todo esto es requerido para conectarse a Microsoft sql server
 
 $serverName = "PC-F-006\SQLEXPRESS"; // <- esto cambia dependiendo de cada pc
 
@@ -15,3 +14,9 @@ if( !$conn ) {
      die( print_r( sqlsrv_errors(), true));
 }
 */
+
+$conn = mysqli_connect('localhost', 'root', '', 'banco_provincia');
+if (!$conn) {
+  die('Error de Conexión (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
+}
+ session_start();
