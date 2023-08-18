@@ -19,8 +19,13 @@
             <div class = "input_reg_form"> <input type="text" name="addres" placeholder="Direccion" required> </div>
             <div class = "input_reg_form"> <input type="date" name="birth_date" placeholder="Fecha de nacimiento" required> </div>
 
-            <div class = "input_reg_form"> <select>
-                    <option value="lol"></option>
+            <div class = "input_reg_form"> 
+                <select>
+                    <option value="lol">En que año entraste a la secundaria ?</option>
+                    <option value="lol">Cual es el segundo nombre de tu abuela ?</option>
+                    <option value="lol">Cual es el apodo de tu hijo/a ?</option>
+                    <option value="lol">Nombre de tu primera mascota ?</option>
+                    <option value="lol">Nombre de la primera escuela a la que fuiste ?</option>                    
                 </select> 
             </div>
 
