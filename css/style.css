@@ -1,16 +1,13 @@
 .form_container {
-    margin-top: 195px;
+    margin-top: 160px;
     display: flex;
     justify-content: center;
     align-items:center;
 }
-.form_o{
-    
-        
+.form_o{        
         display:flex;
         align-items: center;
-        justify-content: center;
-    
+        justify-content: center;    
 }
 
 
@@ -136,4 +133,34 @@
     border-bottom-right-radius: 10px;
     text-decoration: none;
     color: black;
+}
+
+.loged{
+    width: 1300px !important; 
+    margin-bottom: 10px;
+    transform:translateY(-400px);
+    visibility: hidden;
+}
+
+.loged img{
+    width: 250px;
+    height: 250px;
+    margin-left: 25px;
+}
+
+.loged a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; 
 }
