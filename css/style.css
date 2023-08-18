@@ -137,3 +137,23 @@
     text-decoration: none;
     color: black;
 }
+
+.loged{
+    width: 1300px !important; 
+    margin-bottom: 10px;
+    transform:translateY(-400px);
+    visibility: hidden;
+}
+
+.loged img{
+    width: 250px;
+    height: 250px;
+    margin-left: 25px;
+}
+
+.loged a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
