@@ -18,20 +18,20 @@
             <div class = "input_reg_form"> <input type="number" name="cell_nmb" placeholder="Telefono" required> </div>
             <div class = "input_reg_form"> <input type="text" name="addres" placeholder="Direccion" required> </div>
             <div class = "input_reg_form"> <input type="date" name="birth_date" placeholder="Fecha de nacimiento" required> </div>
+</div>
 
-            <div class = "input_reg_form"> 
-                <select>
-                    <option value="lol">En que año entraste a la secundaria ?</option>
-                    <option value="lol">Cual es el segundo nombre de tu abuela ?</option>
-                    <option value="lol">Cual es el apodo de tu hijo/a ?</option>
-                    <option value="lol">Nombre de tu primera mascota ?</option>
-                    <option value="lol">Nombre de la primera escuela a la que fuiste ?</option>                    
-                </select> 
-            </div>
+<div class = "input_reg_form"> 
+    <select class = "register_select" id ="select-register">
+        <option hidden selected>Selecciona pregunta de seguridad</option>
+        <option value="lol">En que año entraste a la secundaria ?</option>
+        <option value="lol">Cual es el segundo nombre de tu abuela ?</option>
+        <option value="lol">Cual es el apodo de tu hijo/a ?</option>
+        <option value="lol">Nombre de tu primera mascota ?</option>
+        <option value="lol">Nombre de la primera escuela a la que fuiste ?</option>                    
+    </select> 
+</div>
 
-
-
-
+<div class = "form_container_1">            
             <div class = "btns_register" >
                 <button class = "btn_reg_form">Registrarme</button>
                 <div class = div_href_login>
@@ -40,7 +40,3 @@
             </div>            
         </form>        
 </div>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
