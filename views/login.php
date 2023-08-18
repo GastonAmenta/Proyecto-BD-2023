@@ -11,7 +11,7 @@
 <br> ¿No tenes cuenta?
 </div>
 <div class="div_href_login2">
-    <a class="href_login" href="">Registrate</a>
+    <a class="href_login" href="register.php">Registrate</a>
 </div>
 
 </div>
