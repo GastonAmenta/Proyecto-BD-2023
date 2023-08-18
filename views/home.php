@@ -35,27 +35,17 @@
                 </div>
             </div>
         </div>
-        <div class="container_login-padre" <?php (isset($_SESSION['user'])) ? "style: visibility: hidden;" : " ";?> >
+        <div class="container_login-padre" <?php echo  (isset($_SESSION['user'])) ? "style: visibility: hidden;" : " ";?> >
             <div class="container_login">
                 <div class="container_logo">
                     <img src="../img/pngwing.com.png" alt="">
                 </div>
-                <?php 
-                
-                if(!$_SESSION["user"]){
-
-                 ?>
                 <div class="container_info2">
                     <a href="../controllers/login.php">Iniciar Sesión</a>
                 </div>
-                <?php } else{ ?>
-                    <div class="container_info2">
-                    <a href="">Bienvenido <?php echo($_SESSION["user"]["nombre"]) ?></a>
-                </div>
-               <?php }?>
             </div>
         </div>
-        <div class="container_login loged">
+        <div class="container_login loged" <?php echo  (isset($_SESSION['user'])) ? "style: visibility: visible;" : " ";?>>
             <div class="container_logo">
                 <div class="container_cards">
                     <a href="#">

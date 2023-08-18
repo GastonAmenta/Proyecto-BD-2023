@@ -9,17 +9,13 @@
     <form action="../controllers/login.php" method="POST">
 
         <input class="" type="text" name="dni" placeholder="Ingrese su DNI"></input> <br>
-        <div class="alert alert-danger" role="alert">
-            <?php echo (isset($err) ? $err : ''); ?>
-        </div>
+       
         <input class="" type="email" name="email" placeholder="Ingrese su email"></input> <br>
-        <div class="alert alert-danger" role="alert">
-            <?php echo (isset($err) ? $err : ''); ?>
-        </div>
+
         <input type="password" name="clave" placeholder="Ingrese su contraseña"></input> <br>
-        
-        <div class="alert alert-danger" role="alert">
-            
+
+        <div>
+            <?php echo (isset($error) ? $error : ''); ?>
         </div>
         <input type="submit" class="btn_reg_form" value="Iniciar Sesion"></input> <br>
     </form>

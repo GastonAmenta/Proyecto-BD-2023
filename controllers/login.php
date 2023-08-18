@@ -12,12 +12,15 @@ if (!empty($_POST)) {
     if(!$resLogin){
         die("Error de consulta: " . mysqli_error($conn));
     }
+    if (mysqli_num_rows($resLogin) === 1){
     $rowLogin = mysqli_fetch_array($resLogin, MYSQLI_ASSOC);
     $_SESSION["user"] = $rowLogin;
     session_start();
     print_r($_SESSION["user"]);
    // header('Location: home.php');
-
+    }else{
+        $error = "Los datos ingresados son incorrectos";
+    }
 
 
 }
