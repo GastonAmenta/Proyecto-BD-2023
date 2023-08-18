@@ -1,4 +1,6 @@
-    <div class= "topnav_register">
+<script src="../js/register.js"></script>
+
+<div class= "topnav_register">
     <div class = "hola">
         <a href= "../index.php">
             <img src="../img/banco_provincia.png" alt="banco_provincia.pnh">
@@ -21,17 +23,18 @@
 </div>
 
 <div class = "input_reg_form"> 
-    <select class = "register_select" id ="select-register">
+    <select class = "register_select" id ="select-register" required>
         <option hidden selected>Selecciona pregunta de seguridad</option>
-        <option value="lol">En que año entraste a la secundaria ?</option>
-        <option value="lol">Cual es el segundo nombre de tu abuela ?</option>
-        <option value="lol">Cual es el apodo de tu hijo/a ?</option>
-        <option value="lol">Nombre de tu primera mascota ?</option>
-        <option value="lol">Nombre de la primera escuela a la que fuiste ?</option>                    
+        <option value="1">En que año entraste a la secundaria ?</option>
+        <option value="2">Cual es el segundo nombre de tu abuela ?</option>
+        <option value="3">Cual es el apodo de tu hijo/a ?</option>
+        <option value="4">Nombre de tu primera mascota ?</option>
+        <option value="5">Nombre de la primera escuela a la que fuiste ?</option>                    
     </select> 
 </div>
 
-<div class = "form_container_1">            
+<div class = "form_container_1">   
+            <div class = "question_input"> <input type="text" name="answer" placeholder="Respuesta" required> </div>         
             <div class = "btns_register" >
                 <button class = "btn_reg_form">Registrarme</button>
                 <div class = div_href_login>
