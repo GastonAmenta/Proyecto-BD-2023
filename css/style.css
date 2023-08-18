@@ -4,13 +4,10 @@
     justify-content: center;
     align-items:center;
 }
-.form_o{
-    
-        
+.form_o{        
         display:flex;
         align-items: center;
-        justify-content: center;
-    
+        justify-content: center;    
 }
 
 
@@ -136,4 +133,14 @@
     border-bottom-right-radius: 10px;
     text-decoration: none;
     color: black;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Para Firefox */
 }
