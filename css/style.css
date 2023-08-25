@@ -182,7 +182,11 @@ input[type="number"] {
     margin-left: 43%;
 }
 
-.question_input{
+.question_input {
     margin-top: 9px;
     display: none;
+}
+
+.input_reg_form .register_select{
+    height: 29px;
 }

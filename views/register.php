@@ -1,5 +1,3 @@
-<script src="../js/register.js"></script>
-
 <div class= "topnav_register">
     <div class = "hola">
         <a href= "../index.php">
@@ -33,8 +31,8 @@
     </select> 
 </div>
 
-<div class = "form_container_1">   
-            <div class = "question_input"> <input type="text" name="answer" placeholder="Respuesta" required> </div>         
+<div class = "form_container_1">
+            <div class = "input_reg_form" style = "margin-bottom : 15px"> <input type="text" name="anwser" placeholder="Respuesta" required> </div>                
             <div class = "btns_register" >
                 <button class = "btn_reg_form">Registrarme</button>
                 <div class = div_href_login>
