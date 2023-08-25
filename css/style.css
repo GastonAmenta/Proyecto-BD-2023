@@ -182,7 +182,7 @@ input[type="number"] {
     margin-left: 43%;
 }
 
-.question_input{
+.question_input {
     margin-top: 9px;
     display: none;
 }
@@ -217,4 +217,8 @@ input[type="number"] {
     font-size:x-large;
     font-style: normal;
     color:#04AA6D;
+}
+
+.input_reg_form .register_select{
+    height: 29px;
 }
