@@ -1,7 +1,10 @@
 <?php
 require_once "../includes/config.php";
-//session_start();
-
+/*session_start();
+if(isset($_SESSION['user'])){
+    header("Location: home.php");
+}
+*/
 if (!empty($_POST)) {
     $dni = $_POST['dni'];
     $email = $_POST['email'];
@@ -16,8 +19,8 @@ if (!empty($_POST)) {
     $rowLogin = mysqli_fetch_array($resLogin, MYSQLI_ASSOC);
     $_SESSION["user"] = $rowLogin;
     session_start();
-    print_r($_SESSION["user"]);
-   // header('Location: home.php');
+   // print_r($_SESSION["user"]);
+    header('Location: home.php');
     }else{
         $error = "Los datos ingresados son incorrectos";
     }
