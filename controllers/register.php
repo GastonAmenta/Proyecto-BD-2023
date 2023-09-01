@@ -2,41 +2,41 @@
 
 require_once "../includes/config.php";
 
-if (empty($_POST)){
+if (!empty($_POST)){
     
     if($_POST['password'] == $_POST['conf_password']){
 
-        $query_verify_dni = "SELECT COUNT(dni) FROM usuarios WHERE dni = " . $_POST['dni'];
-        $rusult_verify_dni = mysqli_query($conn, $query_verify_dni);
-
-        if(!$rusult_verify_dni){
+        $query_verify_dni = "SELECT * FROM usuarios WHERE dni = " . $_POST['dni'];
+        $result_verify_dni = mysqli_query($conn, $query_verify_dni);
+                
+        if(!$result_verify_dni){
             die('Error de Consulta ' . mysqli_error($conn));
-        }        
-
-        if(mysqli_num_rows ( $rusult_verify_dni) > 0){
-            $messege = "Ya hay un usuario";            
-        
+        }            
+        if(mysqli_num_rows ( $result_verify_dni) != 0){
+            $messege = "Ya hay un usuario";                        
         }else{
-            $query_user = "INSERT INTO usuarios(DNI, nombre, apellido, email, fecha_nacimiento, clave, telefono, direccion, nro_seguro_social, preguntas_seguridad, respuestas, fecha_alta) 
-            VALUES(". $_POST['dni']." , '". $_POST['name']."' , '". $_POST['surname']."' , '". $_POST['email']."' , ". $_POST['birth_date']." , ". sha1($_POST['password']) ."' , '". $_POST['cell_nmb']."' , '". $_POST['addres']."' , ". $_POST['cuil']." , '". $_POST['preguntas_seguridad']."' , '". sha1($_POST['respuestas'])."' , 'now()' );";    
-        
+            $query_user = "INSERT INTO usuarios(DNI, nombre, apellido, email, fecha_nacimiento, clave, telefono, direccion, nro_seguro_social, preguntas_seguridad, respuesta, fecha_alta) 
+            VALUES('". $_POST['dni']."' , '". $_POST['name']."' , '". $_POST['surname']."' , '". $_POST['email']."' , '". $_POST['birth_date']."' , '". sha1($_POST['password']) ."' , '". $_POST['cell_nmb']."' , '". $_POST['addres']."' , '". $_POST['cuil']."' , '". $_POST['select-register']."' , '". sha1($_POST['answer'])."' , now() );";    
+
             $result_user = mysqli_query($conn, $query_user);
 
-            if(!$result_user){
+            if(!$result_user){                
                 die('Error de Consulta ' . mysqli_error($conn));
             }else{
 
-            
+            //$query_usuario_id = mysqli_insert_id($conn)
+            // mysqli_insert_id($conn);
 
-                $query_usuario_id = "SELECT id FROM usuarios WHERE dni = " . $_POST['dni'];
+                $query_usuario_id = "SELECT ID FROM usuarios WHERE dni = " . $_POST['dni'];
                 $result_usuario_id = mysqli_query($conn, $query_usuario_id);
                 
                 if(!$result_usuario_id){
                     die('Error de Consulta ' . mysqli_error($conn));
                 }  
 
-                $row = mysqli_fetch_assoc($result_usuario_id);
-                $id = $row['id'];                
+                $row = mysqli_fetch_array($result_usuario_id, MYSQLI_ASSOC);
+                //print_r($row);
+                $id = $row['ID'];
 
                 // Obtener la fecha actual en formato YYYY-MM-DD
                 $fechaActual = date('Y-m-d'); 
@@ -48,15 +48,17 @@ if (empty($_POST)){
                 $ultimoDiaMismoMesTresAnios = date('Y-m-t', strtotime($fechaTresAniosDespues));
 
 
-                $query_caja_ahorro = "INSERT INTO caja_ahorro(usuario_id, cvv, monto_disp, tipo_tarjeta, limite, fecha_emision, fecha_vencimiento, estado_tarjeta, moneda, fecha_alta) 
-                VALUES(".$id." , ".rand(100,999) ." , ". 1000 ." , 'VISA', ". 1000000 ." , '" . date('Y-m-d H', strtotime('+3 days', strtotime($fechaActual))) ."' , '" . $ultimoDiaMismoMesTresAnios . "' , 'ACTIVA' , 'now()')";
+                $query_caja_ahorro = "INSERT INTO caja_ahorro(numr_tarjeta, usuarios_id, cvv, monto_disp, tipo_tarjeta, limite, fecha_emision, fecha_vencimiento, estado_tarjeta, moneda, fecha_alta) 
+                VALUES('".rand(1000000000000000,9999999999999999)."' , '". intval($id) ."' , '".rand(100,999) ."' , '". 1000 ."' , 'VISA', '". 1000000 ."' , '" . date('Y-m-d H', strtotime('+3 days', strtotime($fechaActual))) ."' , '" . $ultimoDiaMismoMesTresAnios . "' , 'ACTIVA' , 'Peso Argentino' , now())";
             
                 $result_caja_ahorro = mysqli_query($conn,$query_caja_ahorro);
 
                 if(!$result_caja_ahorro){
                     die('Error de Consulta ' . mysqli_error($conn));
+                }else{
+                //    header("Location:home.php");
                 }
-                header("Location:home.php");
+                
         
             }
         }
