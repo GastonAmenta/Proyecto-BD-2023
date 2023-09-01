@@ -186,6 +186,38 @@ input[type="number"] {
     margin-top: 9px;
     display: none;
 }
+.back_button{
+    width: auto;
+}
+.my_cards{
+    position:sticky;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    top: 100px;
+    font-size:x-large;
+}
+.debit_card{
+    
+    justify-content: center;
+    align-items: center;
+    margin-left:160px ;
+}
+.monto{
+    font-size:x-large;
+    font-style:inherit;
+    color: #04AA6D;
+    margin-bottom: 10px;
+    margin-left:160px;
+}
+.opciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:x-large;
+    font-style: normal;
+    color:#04AA6D;
+}
 
 .input_reg_form .register_select{
     height: 29px;
