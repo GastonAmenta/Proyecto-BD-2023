@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="container_login-padre" <?php echo  (isset($_SESSION['user'])) ? "style: visibility: hidden;" : " ";?> >
+        <div class="container_login-padre" <?php echo  (isset($_SESSION['user'])) ? "style = visibility:hidden; " : " ";?> >
             <div class="container_login">
                 <div class="container_logo">
                     <img src="../img/pngwing.com.png" alt="">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="container_login loged" <?php echo  (isset($_SESSION['user'])) ? "style: visibility: visible;" : " ";?>>
+        <div class="container_login loged" <?php echo  (isset($_SESSION['user'])) ? "style =  visibility:visible;" : " ";?>>
             <div class="container_logo">
                 <div class="container_cards">
                     <a href="#">
@@ -66,7 +66,7 @@
                     </a>
                 </div>
                 <div class="container_profile">
-                    <a href="#">
+                    <a href="../controllers/profile.php">
                         <img src="../img/pngwing.com.png" alt="">
                         <p>Mi perfil</p>
                     </a>
