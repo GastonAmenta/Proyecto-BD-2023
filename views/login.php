@@ -8,16 +8,16 @@
 <div class="form_container">
     <form action="../controllers/login.php" method="POST">
 
-        <input class="" type="text" name="dni" placeholder="Ingrese su DNI"></input> <br>
+        <input class="input_reg_form" type="text" name="dni" placeholder="Ingrese su DNI"></input> 
        
-        <input class="" type="email" name="email" placeholder="Ingrese su email"></input> <br>
+        <input class="input_reg_form" type="email" name="email" placeholder="Ingrese su email"></input> 
 
-        <input type="password" name="clave" placeholder="Ingrese su contraseña"></input> <br>
+        <input class="input_reg_form"type="password" name="clave" placeholder="Ingrese su contraseña"></input> 
 
         <div>
             <?php echo (isset($error) ? $error : ''); ?>
         </div>
-        <input type="submit" class="btn_reg_form" value="Iniciar Sesion"></input> <br>
+        <input type="submit" class="btn_reg_form"  value="Iniciar Sesion" ></input> 
     </form>
 </div>
 <div class="div_href_login2">
