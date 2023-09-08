@@ -56,10 +56,8 @@ if (!empty($_POST)){
                 if(!$result_caja_ahorro){
                     die('Error de Consulta ' . mysqli_error($conn));
                 }else{
-                //    header("Location:home.php");
-                }
-                
-        
+                    header("Location:home.php");
+                }                        
             }
         }
     } 
