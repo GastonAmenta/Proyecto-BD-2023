@@ -17,7 +17,10 @@ if (!empty($_POST)) {
     }
     if (mysqli_num_rows($resLogin) === 1){
     $rowLogin = mysqli_fetch_array($resLogin, MYSQLI_ASSOC);
-    session_start(); 
+
+    session_start();
+
+
     $_SESSION["user"] = $rowLogin;
    // print_r($_SESSION["user"]);
     header('Location: home.php');

@@ -26,7 +26,9 @@
 
 
     <div class="opciones">
-        <i class="bi bi-arrow-left-right">Transferir</i> <br>
+        <a href="transfer.php">
+            <i class="bi bi-arrow-left-right">Transferir</i>
+        </a>
         <i class="bi bi-clipboard-data-fill">Pagar servicios</i>
 
     </div>
