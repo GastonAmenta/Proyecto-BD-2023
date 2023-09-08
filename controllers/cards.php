@@ -12,6 +12,7 @@ if(!$resultTarjeta){
 }
 $rowTarjeta = mysqli_fetch_array($resultTarjeta, MYSQLI_ASSOC);
 
-print_r($rowTarjeta);   
+//print_r($rowTarjeta);   
+
 $view = "cards";
 require_once "../views/layout.php";

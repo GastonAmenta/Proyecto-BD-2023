@@ -31,12 +31,12 @@
         </a>
         <i class="bi bi-clipboard-data-fill">Pagar servicios</i>
 
-    </div>
+    </div>    
     <div class="debit_card">
 
         <a href="#">
             <img class="debit_card" src="../img/Hsbc-card.jpg" alt="">
-        </a>
+        </a>        
 
         <div class="monto">
             <span>Monto disponible: $<?php echo $rowTarjeta['monto_disp']; ?> <?php echo $rowTarjeta['moneda']; ?> </span> <br>
