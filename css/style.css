@@ -222,3 +222,12 @@ input[type="number"] {
 .input_reg_form .register_select{
     height: 29px;
 }
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}

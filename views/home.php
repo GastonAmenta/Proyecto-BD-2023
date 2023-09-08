@@ -4,8 +4,8 @@
             <div class="container_img">
                 <img src="../img/logo_2021_S.svg" alt="">
             </div>
-            <div class="container_info">
-                <button>Personas</button>
+            <div class="container_info">                
+                <?php if(isset($_SESSION['user'])){ echo '<a class="button" href="../controllers/profile.php">Perfil</a>';} ?>
                 <button>Empresas</button>
                 <button>Emprendedores</button>
                 <button>Provincias compras</button>

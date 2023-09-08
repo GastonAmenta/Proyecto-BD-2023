@@ -10,7 +10,7 @@ if (!empty($_POST)) {
     $email = $_POST['email'];
     $clave = $_POST['clave'];
 
-    $sqlLogin = "SELECT * FROM usuarios WHERE DNI='" . trim($dni) . "' AND email='". trim($email)."' AND clave='".trim($clave)."' AND fecha_baja IS NULL";
+    $sqlLogin = "SELECT * FROM usuarios WHERE DNI='" . trim($dni) . "' AND email='". trim($email)."' AND clave='".sha1($clave)."' AND fecha_baja IS NULL";
     $resLogin = mysqli_query($conn, $sqlLogin);
     if(!$resLogin){
         die("Error de consulta: " . mysqli_error($conn));
