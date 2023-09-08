@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-09-2023 a las 18:48:19
+-- Tiempo de generación: 08-09-2023 a las 21:41:26
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `caja_ahorro` (
   `numr_tarjeta` bigint(20) NOT NULL,
   `usuarios_id` int(11) NOT NULL,
+  `alias` varchar(50) NOT NULL,
   `cvv` int(11) NOT NULL,
   `monto_disp` int(11) NOT NULL,
   `tipo_tarjeta` varchar(4) NOT NULL,
@@ -46,43 +47,44 @@ CREATE TABLE `caja_ahorro` (
 -- Volcado de datos para la tabla `caja_ahorro`
 --
 
-INSERT INTO `caja_ahorro` (`numr_tarjeta`, `usuarios_id`, `cvv`, `monto_disp`, `tipo_tarjeta`, `limite`, `fecha_emision`, `fecha_vencimiento`, `estado_tarjeta`, `moneda`, `fecha_alta`, `fecha_baja`) VALUES
-(2402005713803775, 41, 308, 1000, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
-(3181839098410886, 0, 955, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(3600961973447459, 0, 502, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(4409332347195537, 0, 652, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(4735670777869563, 0, 405, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(5528461744332042, 0, 944, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(6038420630079400, 39, 423, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(6633366427368062, 0, 837, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(7189545879781220, 0, 307, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'PESOS ARG', '2023-09-01', NULL),
-(7225723760992974, 0, 968, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(7691518271253675, 0, 739, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(7699259884815750, 0, 103, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(8017760308268569, 40, 667, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(8128917088872862, 0, 607, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(9008612615782931, 11, 936, 1334156, 'VISA', 100000, '2010-11-06', '2027-04-16', 'habilitada', 'Peso Argentino', '2011-12-15', NULL),
-(9008633168218445, 5, 650, 104605, 'VISA', 100000, '2011-05-03', '2026-12-18', 'habilitada', 'Dolar', '2022-05-30', NULL),
-(9028778274394882, 11, 909, 478850, 'VISA', 100000, '2012-10-22', '2027-06-19', 'pausada', 'Dolar', '2022-03-05', NULL),
-(9063806249426055, 14, 231, 1942518, 'VISA', 100000, '2012-02-15', '2027-02-10', 'habilitada', 'Peso Argentino', '2014-11-11', NULL),
-(9102790471050286, 12, 533, 1313187, 'VISA', 100000, '2010-06-22', '2027-06-10', 'bloqueada', 'Peso Argentino', '2019-03-07', '2022-09-07'),
-(9108905504885557, 16, 107, 1083885, 'VISA', 100000, '2011-07-11', '2024-05-05', 'habilitada', 'Peso Argentino', '2012-01-17', NULL),
-(9280130175076040, 12, 801, 847999, 'VISA', 100000, '2010-05-09', '2025-07-17', 'habilitada', 'Peso Argentino', '2012-02-01', NULL),
-(9281584351062836, 15, 109, 663009, 'VISA', 100000, '2011-09-05', '2027-04-07', 'habilitada', 'Dolar', '2018-11-28', NULL),
-(9393674959172466, 15, 505, 495576, 'VISA', 100000, '2011-02-07', '2027-03-05', 'habilitada', 'Dolar', '2020-05-20', NULL),
-(9412445785339079, 1, 123, 231493, 'VISA', 100000, '2012-06-13', '2026-03-30', 'habilitada', 'Peso Argentino', '2019-06-21', NULL),
-(9444545709939264, 20, 313, 1488254, 'VISA', 100000, '2012-03-03', '2026-04-13', 'habilitada', 'Dolar', '2010-01-07', NULL),
-(9470132552165830, 10, 159, 1729272, 'VISA', 100000, '2012-02-23', '2026-03-18', 'pausada', 'Peso Argentino', '2013-01-17', NULL),
-(9487678145707285, 11, 608, 846918, 'VISA', 100000, '2012-06-03', '2026-08-23', 'habilitada', 'Peso Argentino', '2018-06-07', NULL),
-(9499997748530813, 17, 763, 473180, 'VISA', 100000, '2010-01-13', '2024-12-07', 'habilitada', 'Dolar', '2023-03-26', NULL),
-(9636434374829233, 13, 689, 1042742, 'VISA', 100000, '2012-04-08', '2027-03-29', 'habilitada', 'Peso Argentino', '2015-09-06', NULL),
-(9698516100868343, 2, 273, 1172003, 'VISA', 100000, '2010-10-19', '2024-02-12', 'habilitada', 'Peso Argentino', '2013-01-24', NULL),
-(9704485861863629, 0, 712, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(9801494123577617, 11, 622, 824763, 'VISA', 100000, '2010-11-14', '2027-07-25', 'habilitada', 'Dolar', '2011-09-26', NULL),
-(9810301662981351, 9, 374, 417834, 'VISA', 100000, '2012-12-20', '2026-07-19', 'bloqueada', 'Peso Argentino', '2019-01-13', '2023-07-12'),
-(9853552574253666, 16, 559, 965822, 'VISA', 100000, '2011-04-26', '2026-04-27', 'habilitada', 'Dolar', '2020-01-26', NULL),
-(9905215659879409, 20, 890, 1421857, 'VISA', 100000, '2012-06-20', '2024-09-11', 'pausada', 'Dolar', '2019-05-27', NULL),
-(9947200681663303, 18, 533, 1651340, 'VISA', 100000, '2012-10-19', '2025-02-08', 'pausada', 'Peso Argentino', '2013-12-28', NULL);
+INSERT INTO `caja_ahorro` (`numr_tarjeta`, `usuarios_id`, `alias`, `cvv`, `monto_disp`, `tipo_tarjeta`, `limite`, `fecha_emision`, `fecha_vencimiento`, `estado_tarjeta`, `moneda`, `fecha_alta`, `fecha_baja`) VALUES
+(2402005713803775, 41, '0', 308, 1000, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
+(3181839098410886, 0, '0', 955, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(3600961973447459, 0, '0', 502, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(4409332347195537, 0, '0', 652, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(4735670777869563, 0, '0', 405, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(5528461744332042, 25, 'Koala.Banana', 944, 1856, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(5555892124229880, 42, 'holaa', 118, 21, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
+(6038420630079400, 39, '0', 423, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(6633366427368062, 0, '0', 837, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(7189545879781220, 0, '0', 307, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'PESOS ARG', '2023-09-01', NULL),
+(7225723760992974, 0, '0', 968, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(7691518271253675, 0, '0', 739, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(7699259884815750, 0, '0', 103, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(8017760308268569, 40, '0', 667, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(8128917088872862, 0, '0', 607, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(9008612615782931, 11, '0', 936, 1334156, 'VISA', 100000, '2010-11-06', '2027-04-16', 'habilitada', 'Peso Argentino', '2011-12-15', NULL),
+(9008633168218445, 5, '0', 650, 104605, 'VISA', 100000, '2011-05-03', '2026-12-18', 'habilitada', 'Dolar', '2022-05-30', NULL),
+(9028778274394882, 11, '0', 909, 478850, 'VISA', 100000, '2012-10-22', '2027-06-19', 'pausada', 'Dolar', '2022-03-05', NULL),
+(9063806249426055, 14, '0', 231, 1942518, 'VISA', 100000, '2012-02-15', '2027-02-10', 'habilitada', 'Peso Argentino', '2014-11-11', NULL),
+(9102790471050286, 12, '0', 533, 1313187, 'VISA', 100000, '2010-06-22', '2027-06-10', 'bloqueada', 'Peso Argentino', '2019-03-07', '2022-09-07'),
+(9108905504885557, 16, '0', 107, 1083885, 'VISA', 100000, '2011-07-11', '2024-05-05', 'habilitada', 'Peso Argentino', '2012-01-17', NULL),
+(9280130175076040, 12, '0', 801, 847999, 'VISA', 100000, '2010-05-09', '2025-07-17', 'habilitada', 'Peso Argentino', '2012-02-01', NULL),
+(9281584351062836, 15, '0', 109, 663009, 'VISA', 100000, '2011-09-05', '2027-04-07', 'habilitada', 'Dolar', '2018-11-28', NULL),
+(9393674959172466, 15, '0', 505, 495576, 'VISA', 100000, '2011-02-07', '2027-03-05', 'habilitada', 'Dolar', '2020-05-20', NULL),
+(9412445785339079, 1, '0', 123, 231493, 'VISA', 100000, '2012-06-13', '2026-03-30', 'habilitada', 'Peso Argentino', '2019-06-21', NULL),
+(9444545709939264, 20, '0', 313, 1488254, 'VISA', 100000, '2012-03-03', '2026-04-13', 'habilitada', 'Dolar', '2010-01-07', NULL),
+(9470132552165830, 10, '0', 159, 1729272, 'VISA', 100000, '2012-02-23', '2026-03-18', 'pausada', 'Peso Argentino', '2013-01-17', NULL),
+(9487678145707285, 11, '0', 608, 846918, 'VISA', 100000, '2012-06-03', '2026-08-23', 'habilitada', 'Peso Argentino', '2018-06-07', NULL),
+(9499997748530813, 17, '0', 763, 473180, 'VISA', 100000, '2010-01-13', '2024-12-07', 'habilitada', 'Dolar', '2023-03-26', NULL),
+(9636434374829233, 13, '0', 689, 1042742, 'VISA', 100000, '2012-04-08', '2027-03-29', 'habilitada', 'Peso Argentino', '2015-09-06', NULL),
+(9698516100868343, 2, '0', 273, 1172003, 'VISA', 100000, '2010-10-19', '2024-02-12', 'habilitada', 'Peso Argentino', '2013-01-24', NULL),
+(9704485861863629, 0, '0', 712, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(9801494123577617, 11, '0', 622, 824763, 'VISA', 100000, '2010-11-14', '2027-07-25', 'habilitada', 'Dolar', '2011-09-26', NULL),
+(9810301662981351, 9, '0', 374, 417834, 'VISA', 100000, '2012-12-20', '2026-07-19', 'bloqueada', 'Peso Argentino', '2019-01-13', '2023-07-12'),
+(9853552574253666, 16, '0', 559, 965822, 'VISA', 100000, '2011-04-26', '2026-04-27', 'habilitada', 'Dolar', '2020-01-26', NULL),
+(9905215659879409, 20, '0', 890, 1421857, 'VISA', 100000, '2012-06-20', '2024-09-11', 'pausada', 'Dolar', '2019-05-27', NULL),
+(9947200681663303, 18, '0', 533, 1651340, 'VISA', 100000, '2012-10-19', '2025-02-08', 'pausada', 'Peso Argentino', '2013-12-28', NULL);
 
 -- --------------------------------------------------------
 
@@ -305,7 +307,15 @@ INSERT INTO `transacciones` (`id_transaccion`, `fecha_hora`, `cuenta_origen`, `c
 (22, '2023-01-13 00:00:00', 8, 53, 'transferencia', 70617, 'In blandit ultrices enim.', 'exitosa'),
 (23, '2022-08-14 00:00:00', 20, 78, 'transferencia', 61213, NULL, 'exitosa'),
 (24, '2022-08-06 00:00:00', 16, 53, 'transferencia', 53376, NULL, 'exitosa'),
-(25, '2022-11-24 00:00:00', 9, NULL, 'retiro', 18338, NULL, 'exitosa');
+(25, '2022-11-24 00:00:00', 42, NULL, 'retiro', 18338, NULL, 'exitosa'),
+(26, '2023-09-08 20:39:50', 42, 25, 'transferencia', 100, 'test', 'exitosa'),
+(27, '2023-09-08 15:58:48', 42, 25, 'transferencia', 200, 'holaaa', 'exitosa'),
+(28, '2023-09-08 16:00:44', 42, 25, 'transferencia', 200, 'holaaa', 'exitosa'),
+(29, '2023-09-08 16:02:55', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
+(30, '2023-09-08 16:03:36', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
+(31, '2023-09-08 16:04:36', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
+(32, '2023-09-08 16:04:51', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
+(33, '2023-09-08 16:05:08', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa');
 
 -- --------------------------------------------------------
 
@@ -323,7 +333,7 @@ CREATE TABLE `usuarios` (
   `clave` varchar(128) NOT NULL,
   `telefono` varchar(50) NOT NULL,
   `direccion` varchar(50) NOT NULL,
-  `nro_seguro_social` bigint(20) NOT NULL,
+  `cuil` bigint(20) NOT NULL,
   `preguntas_seguridad` int(1) NOT NULL,
   `respuesta` varchar(50) NOT NULL,
   `fecha_alta` date NOT NULL,
@@ -334,7 +344,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `clave`, `telefono`, `direccion`, `nro_seguro_social`, `preguntas_seguridad`, `respuesta`, `fecha_alta`, `fecha_baja`) VALUES
+INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `clave`, `telefono`, `direccion`, `cuil`, `preguntas_seguridad`, `respuesta`, `fecha_alta`, `fecha_baja`) VALUES
 (1, 68519637, 'Ardis', 'Fortescue', 'afortescue0@photobucket.com', '1967-06-29', 'mU5{}T4g', '+62 105 981 0278', '8 Buena Vista Way', 14506615719, 0, '', '2017-02-27', NULL),
 (2, 66455970, 'Elnore', 'Wharf', 'ewharf1@free.fr', '1961-04-09', 'hV3&tbx9bWgl2', '+60 287 332 3472', '63548 Dunning Crossing', 19745988391, 0, '', '2006-11-26', '2023-03-13'),
 (3, 85631119, 'Byrle', 'Mallall', 'bmallall2@auda.org.au', '1979-01-02', 'qX3_uWi075kO`L8l', '+86 810 486 6522', '96067 Duke Pass', 11920647487, 0, '', '2020-04-07', NULL),
@@ -374,7 +384,8 @@ INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacim
 (38, 12351, 'mas', 'MASD', 'A@asdf', '2023-08-28', 'c129b324aee662b04eccf68babba85851346dff9', '64361', 'asdf', 123451, 1, '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8', '0000-00-00', NULL),
 (39, 1234, 'sadf', 'asdf', 'a@asdf', '2023-08-29', '3da541559918a808c2402bba5012f6c60b27661c', '12341234', '12341234', 1234, 2, '3da541559918a808c2402bba5012f6c60b27661c', '0000-00-00', NULL),
 (40, 9234857, 'matias', 'herman', 'a@gmailcom', '2023-08-30', '92429d82a41e930486c6de5ebda9602d55c39986', '12341234', '12341234', 92348570, 1, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', NULL),
-(41, 1234123400, 'matias', 'herman', 'a@gmail.com', '2005-08-22', '1ef64cc99ec9cbc83d73bb1f26ca6787a3d8a1ff', '1234123400', '1234123400', 1234123400, 1, '0c422ba64421103f8f58fc3c8676caf9c7c73178', '2023-09-08', NULL);
+(41, 1234123400, 'matias', 'herman', 'a@gmail.com', '2005-08-22', '1ef64cc99ec9cbc83d73bb1f26ca6787a3d8a1ff', '1234123400', '1234123400', 1234123400, 1, '0c422ba64421103f8f58fc3c8676caf9c7c73178', '2023-09-08', NULL),
+(42, 46913393, 'gaston', 'amenta', 'gaston@gmail.com', '2002-09-28', '0f3fde0103dd44077c040215a2fabd09a097aecc', '3414134134', 'hola', 8432382439, 3, 'c41975d1dae1cc69b16ad8892b8c77164e84ca39', '2023-09-08', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -460,13 +471,13 @@ ALTER TABLE `prestamos`
 -- AUTO_INCREMENT de la tabla `transacciones`
 --
 ALTER TABLE `transacciones`
-  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
