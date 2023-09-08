@@ -48,7 +48,7 @@
         <div class="container_login loged" <?php echo  (isset($_SESSION['user'])) ? "style =  visibility:visible;" : " ";?>>
             <div class="container_logo">
                 <div class="container_cards">
-                    <a href="#">
+                    <a href="../controllers/cards.php">
                         <img src="../img/card.png" alt="">
                         <p>Mis tarjetas</p>
                     </a>
