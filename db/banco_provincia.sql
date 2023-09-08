@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-08-2023 a las 19:47:55
+-- Tiempo de generación: 08-09-2023 a las 18:48:19
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -47,6 +47,20 @@ CREATE TABLE `caja_ahorro` (
 --
 
 INSERT INTO `caja_ahorro` (`numr_tarjeta`, `usuarios_id`, `cvv`, `monto_disp`, `tipo_tarjeta`, `limite`, `fecha_emision`, `fecha_vencimiento`, `estado_tarjeta`, `moneda`, `fecha_alta`, `fecha_baja`) VALUES
+(2402005713803775, 41, 308, 1000, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
+(3181839098410886, 0, 955, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(3600961973447459, 0, 502, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(4409332347195537, 0, 652, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(4735670777869563, 0, 405, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(5528461744332042, 0, 944, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(6038420630079400, 39, 423, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(6633366427368062, 0, 837, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(7189545879781220, 0, 307, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'PESOS ARG', '2023-09-01', NULL),
+(7225723760992974, 0, 968, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(7691518271253675, 0, 739, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(7699259884815750, 0, 103, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(8017760308268569, 40, 667, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(8128917088872862, 0, 607, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (9008612615782931, 11, 936, 1334156, 'VISA', 100000, '2010-11-06', '2027-04-16', 'habilitada', 'Peso Argentino', '2011-12-15', NULL),
 (9008633168218445, 5, 650, 104605, 'VISA', 100000, '2011-05-03', '2026-12-18', 'habilitada', 'Dolar', '2022-05-30', NULL),
 (9028778274394882, 11, 909, 478850, 'VISA', 100000, '2012-10-22', '2027-06-19', 'pausada', 'Dolar', '2022-03-05', NULL),
@@ -63,6 +77,7 @@ INSERT INTO `caja_ahorro` (`numr_tarjeta`, `usuarios_id`, `cvv`, `monto_disp`, `
 (9499997748530813, 17, 763, 473180, 'VISA', 100000, '2010-01-13', '2024-12-07', 'habilitada', 'Dolar', '2023-03-26', NULL),
 (9636434374829233, 13, 689, 1042742, 'VISA', 100000, '2012-04-08', '2027-03-29', 'habilitada', 'Peso Argentino', '2015-09-06', NULL),
 (9698516100868343, 2, 273, 1172003, 'VISA', 100000, '2010-10-19', '2024-02-12', 'habilitada', 'Peso Argentino', '2013-01-24', NULL),
+(9704485861863629, 0, 712, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (9801494123577617, 11, 622, 824763, 'VISA', 100000, '2010-11-14', '2027-07-25', 'habilitada', 'Dolar', '2011-09-26', NULL),
 (9810301662981351, 9, 374, 417834, 'VISA', 100000, '2012-12-20', '2026-07-19', 'bloqueada', 'Peso Argentino', '2019-01-13', '2023-07-12'),
 (9853552574253666, 16, 559, 965822, 'VISA', 100000, '2011-04-26', '2026-04-27', 'habilitada', 'Dolar', '2020-01-26', NULL),
@@ -167,6 +182,29 @@ INSERT INTO `plazo_fijo` (`id`, `usuario_id`, `monto`, `tasa_interes`, `plazo`, 
 (23, 6, 25974, 95, 20, 'Peso Argentino', 50663, 3775, '2019-01-23', NULL),
 (24, 16, 22284, 99, 24, 'Peso Argentino', 49951, 8301, '2019-08-20', NULL),
 (25, 20, 22132, 99, 23, 'Peso Argentino', 48716, 2130, '2016-08-15', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `preguntas`
+--
+
+CREATE TABLE `preguntas` (
+  `id` int(11) NOT NULL,
+  `pregunta` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `preguntas`
+--
+
+INSERT INTO `preguntas` (`id`, `pregunta`) VALUES
+(1, 'En que año '),
+(2, 'En que año entraste a la secundaria ?'),
+(3, 'Cual es el segundo nombre de tu abuela ?'),
+(4, 'Cual es el apodo de tu hijo/a ?'),
+(5, 'Nombre de tu primera mascota ?'),
+(6, 'Nombre de la primera escuela a la que fuiste ?');
 
 -- --------------------------------------------------------
 
@@ -282,11 +320,12 @@ CREATE TABLE `usuarios` (
   `apellido` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
-  `clave` varchar(50) NOT NULL,
+  `clave` varchar(128) NOT NULL,
   `telefono` varchar(50) NOT NULL,
   `direccion` varchar(50) NOT NULL,
   `nro_seguro_social` bigint(20) NOT NULL,
-  `preguntas_seguridad` varchar(50) NOT NULL,
+  `preguntas_seguridad` int(1) NOT NULL,
+  `respuesta` varchar(50) NOT NULL,
   `fecha_alta` date NOT NULL,
   `fecha_baja` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -295,27 +334,47 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `clave`, `telefono`, `direccion`, `nro_seguro_social`, `preguntas_seguridad`, `fecha_alta`, `fecha_baja`) VALUES
-(1, 68519637, 'Ardis', 'Fortescue', 'afortescue0@photobucket.com', '1967-06-29', 'mU5{}T4g', '+62 105 981 0278', '8 Buena Vista Way', 14506615719, 'Duis bibendum. Morbi non quam nec dui luctus rutru', '2017-02-27', NULL),
-(2, 66455970, 'Elnore', 'Wharf', 'ewharf1@free.fr', '1961-04-09', 'hV3&tbx9bWgl2', '+60 287 332 3472', '63548 Dunning Crossing', 19745988391, 'Maecenas rhoncus aliquam lacus.', '2006-11-26', '2023-03-13'),
-(3, 85631119, 'Byrle', 'Mallall', 'bmallall2@auda.org.au', '1979-01-02', 'qX3_uWi075kO`L8l', '+86 810 486 6522', '96067 Duke Pass', 11920647487, 'Proin eu mi. Nulla ac enim. In tempor, turpis nec ', '2020-04-07', NULL),
-(4, 29043814, 'Beatrisa', 'Menco', 'bmenco3@cyberchimps.com', '1967-01-09', 'vO1/=QEbkpdgW/4', '+86 884 940 9732', '34895 Thompson Junction', 13017032134, 'Duis bibendum, felis sed interdum venenatis, turpi', '2004-11-20', NULL),
-(5, 34236318, 'Joshuah', 'Culross', 'jculross4@yellowbook.com', '1980-02-10', 'aM9)|KB\"(Jb#z5', '+595 288 814 5771', '412 Haas Trail', 16205660239, 'Maecenas pulvinar lobortis est.', '2021-04-30', NULL),
-(6, 23189785, 'Ann-marie', 'Rizzello', 'arizzello5@dailymail.co.uk', '1983-05-18', 'kP0)\"_X*w.EJDYe', '+7 628 467 8104', '37001 Westend Parkway', 13659037364, 'Nullam porttitor lacus at turpis. Donec posuere me', '2020-09-05', '2022-10-18'),
-(7, 47487958, 'Margette', 'Birkhead', 'mbirkhead6@wisc.edu', '1993-10-29', 'zX8CH<!z\\_r2.}*', '+62 869 221 5990', '54324 Anhalt Street', 19686984262, 'In hac habitasse platea dictumst.', '2011-09-11', NULL),
-(8, 91052336, 'Robinette', 'Gillbanks', 'rgillbanks7@dedecms.com', '1961-10-19', 'aJ9@g7<i\"p2vW_29', '+63 104 455 6828', '4 Katie Way', 12385312074, 'Vivamus in felis eu sapien cursus vestibulum. Proi', '2012-09-13', NULL),
-(9, 51744403, 'Ned', 'Lux', 'nlux8@bluehost.com', '1997-08-29', 'oI7`\"|O2', '+51 581 875 6768', '95 Starling Drive', 12417436750, 'Suspendisse ornare consequat lectus. In est risus,', '2006-09-19', NULL),
-(10, 24687703, 'Shelli', 'Fairclough', 'sfairclough9@cnn.com', '1989-10-09', 'xV1{hM)Tre', '+297 733 999 4310', '03259 Bluejay Avenue', 12233060799, 'Vestibulum rutrum rutrum neque. Aenean auctor grav', '2000-12-08', NULL),
-(11, 82972633, 'Alexandro', 'Lewzey', 'alewzeya@weibo.com', '1996-01-19', 'pD7>idSY', '+62 404 188 0365', '646 Dottie Road', 12936760142, 'Proin leo odio, porttitor id, consequat in, conseq', '2002-03-26', NULL),
-(12, 22286780, 'Noemi', 'Newlin', 'nnewlinb@un.org', '1962-10-30', 'fY1>ro4%d,sXvI3', '+63 964 518 4524', '72506 Southridge Parkway', 11129986417, 'Fusce posuere felis sed lacus. Morbi sem mauris, l', '2010-09-17', NULL),
-(13, 39972134, 'Serena', 'Neaverson', 'sneaversonc@booking.com', '1984-06-21', 'cV8$@PY@APG!B', '+86 642 943 8195', '7 Morning Street', 11161193622, 'Integer ac leo. Pellentesque ultrices mattis odio.', '2015-04-22', NULL),
-(14, 86315013, 'Matilda', 'Duffree', 'mduffreed@4shared.com', '1994-05-27', 'bJ4p{eT|fR`{', '+62 383 515 5053', '0 Texas Street', 15807529059, 'Duis consequat dui nec nisi volutpat eleifend.', '2022-07-03', '2023-06-21'),
-(15, 86574976, 'Ada', 'Walkinshaw', 'awalkinshawe@last.fm', '1985-10-26', 'gR7\'#E.8$r{1', '+84 377 849 4932', '3935 Ohio Place', 11934335251, 'Donec posuere metus vitae ipsum.', '2012-11-10', NULL),
-(16, 61627156, 'Elizabet', 'Dawbury', 'edawburyf@cafepress.com', '1981-12-10', 'lI7=`b\'hNuK', '+55 444 723 2045', '34 Kingsford Place', 12474068127, 'Fusce congue, diam id ornare imperdiet, sapien urn', '2006-08-25', NULL),
-(17, 56314875, 'Jakob', 'Cheesman', 'jcheesmang@narod.ru', '1976-01-23', 'cQ4$tnZQG*3*7.J', '+599 224 774 2853', '1 Forest Run Junction', 13743570919, 'Integer ac neque. Duis bibendum.', '2017-10-19', NULL),
-(18, 44795768, 'Arda', 'Ziehms', 'aziehmsh@de.vu', '1999-06-13', 'wW8$LjW9(@#', '+7 765 998 7429', '2 Merry Place', 11633211923, 'Donec vitae nisi. Nam ultrices, libero non mattis ', '2002-04-25', NULL),
-(19, 66599601, 'Norris', 'Heineken', 'nheinekeni@tinypic.com', '1978-04-10', 'kI6}w2wdm_A', '+86 331 245 2717', '032 Northport Alley', 19408482997, 'Morbi porttitor lorem id ligula.', '2002-09-13', NULL),
-(20, 86304640, 'Sheeree', 'Isakovitch', 'sisakovitchj@aol.com', '1971-06-21', 'aL2.q3JD~', '+54 171 299 8673', '85328 South Pass', 11714086080, 'Vestibulum ante ipsum primis in faucibus orci luct', '2019-07-22', '2022-11-23');
+INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacimiento`, `clave`, `telefono`, `direccion`, `nro_seguro_social`, `preguntas_seguridad`, `respuesta`, `fecha_alta`, `fecha_baja`) VALUES
+(1, 68519637, 'Ardis', 'Fortescue', 'afortescue0@photobucket.com', '1967-06-29', 'mU5{}T4g', '+62 105 981 0278', '8 Buena Vista Way', 14506615719, 0, '', '2017-02-27', NULL),
+(2, 66455970, 'Elnore', 'Wharf', 'ewharf1@free.fr', '1961-04-09', 'hV3&tbx9bWgl2', '+60 287 332 3472', '63548 Dunning Crossing', 19745988391, 0, '', '2006-11-26', '2023-03-13'),
+(3, 85631119, 'Byrle', 'Mallall', 'bmallall2@auda.org.au', '1979-01-02', 'qX3_uWi075kO`L8l', '+86 810 486 6522', '96067 Duke Pass', 11920647487, 0, '', '2020-04-07', NULL),
+(4, 29043814, 'Beatrisa', 'Menco', 'bmenco3@cyberchimps.com', '1967-01-09', 'vO1/=QEbkpdgW/4', '+86 884 940 9732', '34895 Thompson Junction', 13017032134, 0, '', '2004-11-20', NULL),
+(5, 34236318, 'Joshuah', 'Culross', 'jculross4@yellowbook.com', '1980-02-10', 'aM9)|KB\"(Jb#z5', '+595 288 814 5771', '412 Haas Trail', 16205660239, 0, '', '2021-04-30', NULL),
+(6, 23189785, 'Ann-marie', 'Rizzello', 'arizzello5@dailymail.co.uk', '1983-05-18', 'kP0)\"_X*w.EJDYe', '+7 628 467 8104', '37001 Westend Parkway', 13659037364, 0, '', '2020-09-05', '2022-10-18'),
+(7, 47487958, 'Margette', 'Birkhead', 'mbirkhead6@wisc.edu', '1993-10-29', 'zX8CH<!z\\_r2.}*', '+62 869 221 5990', '54324 Anhalt Street', 19686984262, 0, '', '2011-09-11', NULL),
+(8, 91052336, 'Robinette', 'Gillbanks', 'rgillbanks7@dedecms.com', '1961-10-19', '403926033d001b5279df37cbbe5287b7c7c267fa', '+63 104 455 6828', '4 Katie Way', 12385312074, 0, '', '2012-09-13', NULL),
+(9, 51744403, 'Ned', 'Lux', 'nlux8@bluehost.com', '1997-08-29', 'oI7`\"|O2', '+51 581 875 6768', '95 Starling Drive', 12417436750, 0, '', '2006-09-19', NULL),
+(10, 24687703, 'Shelli', 'Fairclough', 'sfairclough9@cnn.com', '1989-10-09', 'xV1{hM)Tre', '+297 733 999 4310', '03259 Bluejay Avenue', 12233060799, 0, '', '2000-12-08', NULL),
+(11, 82972633, 'Alexandro', 'Lewzey', 'alewzeya@weibo.com', '1996-01-19', 'pD7>idSY', '+62 404 188 0365', '646 Dottie Road', 12936760142, 0, '', '2002-03-26', NULL),
+(12, 22286780, 'Noemi', 'Newlin', 'nnewlinb@un.org', '1962-10-30', 'fY1>ro4%d,sXvI3', '+63 964 518 4524', '72506 Southridge Parkway', 11129986417, 0, '', '2010-09-17', NULL),
+(13, 39972134, 'Serena', 'Neaverson', 'sneaversonc@booking.com', '1984-06-21', 'cV8$@PY@APG!B', '+86 642 943 8195', '7 Morning Street', 11161193622, 0, '', '2015-04-22', NULL),
+(14, 86315013, 'Matilda', 'Duffree', 'mduffreed@4shared.com', '1994-05-27', 'bJ4p{eT|fR`{', '+62 383 515 5053', '0 Texas Street', 15807529059, 0, '', '2022-07-03', '2023-06-21'),
+(15, 86574976, 'Ada', 'Walkinshaw', 'awalkinshawe@last.fm', '1985-10-26', 'gR7\'#E.8$r{1', '+84 377 849 4932', '3935 Ohio Place', 11934335251, 0, '', '2012-11-10', NULL),
+(16, 61627156, 'Elizabet', 'Dawbury', 'edawburyf@cafepress.com', '1981-12-10', 'lI7=`b\'hNuK', '+55 444 723 2045', '34 Kingsford Place', 12474068127, 0, '', '2006-08-25', NULL),
+(17, 56314875, 'Jakob', 'Cheesman', 'jcheesmang@narod.ru', '1976-01-23', 'cQ4$tnZQG*3*7.J', '+599 224 774 2853', '1 Forest Run Junction', 13743570919, 0, '', '2017-10-19', NULL),
+(18, 44795768, 'Arda', 'Ziehms', 'aziehmsh@de.vu', '1999-06-13', 'wW8$LjW9(@#', '+7 765 998 7429', '2 Merry Place', 11633211923, 0, '', '2002-04-25', NULL),
+(19, 66599601, 'Norris', 'Heineken', 'nheinekeni@tinypic.com', '1978-04-10', 'kI6}w2wdm_A', '+86 331 245 2717', '032 Northport Alley', 19408482997, 0, '', '2002-09-13', NULL),
+(20, 86304640, 'Sheeree', 'Isakovitch', 'sisakovitchj@aol.com', '1971-06-21', 'aL2.q3JD~', '+54 171 299 8673', '85328 South Pass', 11714086080, 0, '', '2019-07-22', '2022-11-23'),
+(21, 12341234, 'sdaf', 'asdf', 'a@asdf', '2023-09-04', '92429d82a41e930486c6de5ebda9602d55c39986', '1234', 'DSFAS', 12342134, 2, '6fb4fe68800d990e065353fdb7787b4c7b57996d', '0000-00-00', NULL),
+(23, 43782497, 'maria', 'gonzalez', 'gonzales@ggmail.com', '1980-06-29', 'a9a98f4315df8cccd5358a671784e1567f9d4cc7', '1179964623', 'jujuy 255', 27437824979, 3, '1a1f58c9adc75e11a9c4c108e39bb79bfb4435ac', '0000-00-00', NULL),
+(24, 15777770, 'Samuel', 'De Luque', 'guapisimo777@gmail.com', '1977-07-07', '7cc7aafa6d650f882d59fa52d7882d608b2a32a8', '1107770777', 'Andorra ', 20157777704, 5, '5740369bbd42b12b5cf604faf00983fe4448203a', '0000-00-00', NULL),
+(25, 17777777, 'Samuel', 'De Luque', 'guapisimo777@gmail.com', '1977-07-07', '1abcde91b934fa469216cf09827123590afa02cb', '1107770777', 'Andorra', 20177777775, 3, 'a0ba9ddf43506bcf5631c9738d02d4d0e7cf91bd', '0000-00-00', NULL),
+(26, 3245897, 'matias', 'herman', 'a@g', '2023-09-03', 'c129b324aee662b04eccf68babba85851346dff9', '12341243', 'mUFASA', 12351663, 1, '95c0282573633eb230f5064039e6b359e05e8752', '0000-00-00', NULL),
+(27, 2147483647, 'jogf', 'gfejo', 'sdopfp@gmail.com', '1998-08-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '34174107', 'gfkgkgs', 2347924379243, 3, 'ded1026bfc9f9200df09909ab59b15b2a3d0c13c', '0000-00-00', NULL),
+(28, 1323123123, 'sghi', 'fgji', 'dqfsdfq@gmail', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '3427923', 'gffgdf', 1231223321312, 2, '1c67455daddaa745740a0bcb41e49859795b507a', '0000-00-00', NULL),
+(29, 1233312132, 'fsdkfskfsdf', 'fsdsdffs', 'sgja@gmail', '2002-12-20', '601f1889667efaebb33b8c12572835da3f027f78', '1321232132', 'fojgdfoo', 1132123213132, 2, '052983ee7dd36eb268b63f9e49b99f1772e839ba', '0000-00-00', NULL),
+(30, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '601f1889667efaebb33b8c12572835da3f027f78', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
+(31, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
+(32, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
+(33, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
+(34, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
+(35, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
+(36, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
+(37, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
+(38, 12351, 'mas', 'MASD', 'A@asdf', '2023-08-28', 'c129b324aee662b04eccf68babba85851346dff9', '64361', 'asdf', 123451, 1, '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8', '0000-00-00', NULL),
+(39, 1234, 'sadf', 'asdf', 'a@asdf', '2023-08-29', '3da541559918a808c2402bba5012f6c60b27661c', '12341234', '12341234', 1234, 2, '3da541559918a808c2402bba5012f6c60b27661c', '0000-00-00', NULL),
+(40, 9234857, 'matias', 'herman', 'a@gmailcom', '2023-08-30', '92429d82a41e930486c6de5ebda9602d55c39986', '12341234', '12341234', 92348570, 1, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', NULL),
+(41, 1234123400, 'matias', 'herman', 'a@gmail.com', '2005-08-22', '1ef64cc99ec9cbc83d73bb1f26ca6787a3d8a1ff', '1234123400', '1234123400', 1234123400, 1, '0c422ba64421103f8f58fc3c8676caf9c7c73178', '2023-09-08', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -337,6 +396,12 @@ ALTER TABLE `credito`
 -- Indices de la tabla `plazo_fijo`
 --
 ALTER TABLE `plazo_fijo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `preguntas`
+--
+ALTER TABLE `preguntas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -380,6 +445,12 @@ ALTER TABLE `plazo_fijo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT de la tabla `preguntas`
+--
+ALTER TABLE `preguntas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
@@ -395,7 +466,7 @@ ALTER TABLE `transacciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
