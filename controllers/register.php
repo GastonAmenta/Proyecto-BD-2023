@@ -70,7 +70,22 @@ if (!empty($_POST)){
                 if(!$result_caja_ahorro){
                     die('Error de Consulta ' . mysqli_error($conn));
                 }else{
-                    header("Location:home.php");
+
+                    $sqlLogin = "SELECT * FROM usuarios WHERE DNI='" . $_POST['dni'] . "' ";
+                    $resLogin = mysqli_query($conn, $sqlLogin);
+                    if(!$resLogin){
+                        die("Error de consulta: " . mysqli_error($conn));
+                    }
+                    if (mysqli_num_rows($resLogin) === 1){
+                    $rowLogin = mysqli_fetch_array($resLogin, MYSQLI_ASSOC);
+                
+                    session_start();
+                
+                
+                    $_SESSION["user"] = $rowLogin;
+                   // print_r($_SESSION["user"]);
+                    header('Location: home.php');
+                    }
                 }                        
             }
         }
