@@ -15,7 +15,7 @@ if (!empty($_POST)){
         if(mysqli_num_rows ( $result_verify_dni) != 0){
             $messege = "Ya hay un usuario";                        
         }else{
-            $query_user = "INSERT INTO usuarios(DNI, nombre, apellido, email, fecha_nacimiento, clave, telefono, direccion, nro_seguro_social, preguntas_seguridad, respuesta, fecha_alta) 
+            $query_user = "INSERT INTO usuarios(DNI, nombre, apellido, email, fecha_nacimiento, clave, telefono, direccion, cuil, preguntas_seguridad, respuesta, fecha_alta) 
             VALUES('". $_POST['dni']."' , '". $_POST['name']."' , '". $_POST['surname']."' , '". $_POST['email']."' , '". $_POST['birth_date']."' , '". sha1($_POST['password']) ."' , '". $_POST['cell_nmb']."' , '". $_POST['addres']."' , '". $_POST['cuil']."' , '". $_POST['select-register']."' , '". sha1($_POST['answer'])."' , now() );";    
 
             $result_user = mysqli_query($conn, $query_user);
@@ -47,9 +47,23 @@ if (!empty($_POST)){
                 // Obtener el último día del mismo mes dentro de tres años
                 $ultimoDiaMismoMesTresAnios = date('Y-m-t', strtotime($fechaTresAniosDespues));
 
+                //randomizar 4 numeros/letras 
+                $caracteres_permitidos = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-                $query_caja_ahorro = "INSERT INTO caja_ahorro(numr_tarjeta, usuarios_id, cvv, monto_disp, tipo_tarjeta, limite, fecha_emision, fecha_vencimiento, estado_tarjeta, moneda, fecha_alta) 
-                VALUES('".rand(1000000000000000,9999999999999999)."' , '". intval($id) ."' , '".rand(100,999) ."' , '". 1000 ."' , 'VISA', '". 1000000 ."' , '" . date('Y-m-d H', strtotime('+3 days', strtotime($fechaActual))) ."' , '" . $ultimoDiaMismoMesTresAnios . "' , 'ACTIVA' , 'Peso Argentino' , now())";
+                // Inicializar una variable para almacenar la cadena aleatoria
+                $alias = "";
+
+                // Generar 4 caracteres aleatorios
+                for ($i = 0; $i < 4; $i++) {
+                    // Obtener un índice aleatorio dentro de la longitud de la lista de caracteres permitidos
+                    $indice = rand(0, strlen($caracteres_permitidos) - 1);
+                    
+                    // Agregar el carácter aleatorio a la cadena aleatoria
+                    $alias .= $caracteres_permitidos[$indice];
+                }                            
+
+                $query_caja_ahorro = "INSERT INTO caja_ahorro(numr_tarjeta, usuarios_id, alias, cvv, monto_disp, tipo_tarjeta, limite, fecha_emision, fecha_vencimiento, estado_tarjeta, moneda, fecha_alta) 
+                VALUES('".rand(1000000000000000,9999999999999999)."' , '". intval($id) ."' , '". ($_POST['name'].$alias.".bp") ."' , '".rand(100,999) ."' , '". 1000 ."' , 'VISA', '". 1000000 ."' , '" . date('Y-m-d H', strtotime('+3 days', strtotime($fechaActual))) ."' , '" . $ultimoDiaMismoMesTresAnios . "' , 'ACTIVA' , 'Peso Argentino' , now())";
             
                 $result_caja_ahorro = mysqli_query($conn,$query_caja_ahorro);
 
