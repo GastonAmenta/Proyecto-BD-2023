@@ -10,10 +10,12 @@
 }
 
 .container {
+
     width: 100%;  
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .card {
@@ -22,6 +24,7 @@
     color: #fff;
     cursor: pointer;
     perspective: 1000px;
+    
 }
 
 .card-inner {
@@ -35,7 +38,7 @@
 .front, .back {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
+    background-image: linear-gradient(45deg, #096E82, #47991A);
     position: absolute;
     top: 0;
     left: 0;
@@ -127,3 +130,73 @@
 }
 
 /* Termina tarjeta de devito */
+
+.container_img{
+    width: 200px;
+    margin-top: 40px;
+}
+
+.container_info{
+    margin-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 10px;
+    margin-top: 40px;
+}
+
+.especial{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    border: solid 1px;
+    border-color: black;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+}
+
+.container_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_info button{
+    border: none;
+    padding: 10px;
+    background-color: white;
+    font-size: 16px;
+}
+
+.container_info a{
+    text-decoration: none;
+    color: black;
+}
+
+.container_button{
+    display: flex;
+}
+
+.opciones{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.monto{
+    margin-top: 20px;
+}
+
+.transButton {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgba(39, 157, 46, 0.8);
+    padding: 5px;
+    margin-right: 10px;
+    color: white;
+    
+}
+
+.transButton a{
+    color: white;
+    text-decoration: none;
+}

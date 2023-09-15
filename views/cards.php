@@ -2,28 +2,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../css/style2.css">
 </meta>
+<div class="container_header">
+        <div class="container_button">
+            <div class="container_img">
+                <a href="../controllers/home.php">
+                    <img src="../img/logo_2021_S.svg" alt="">
+                </a>
+            </div>
+            <div class="container_info">                
+                <?php if(isset($_SESSION['user'])){ echo '<a class="button" href="../controllers/profile.php">Perfil</a>';} ?>
+                <button>Empresas</button>
+                <button>Emprendedores</button>
+                <button>Provincias compras</button>
+                <button>Turnos web</button>
+                <a class="especial">BIP Personas</a>
+                <a class="especial">BIP Empresas</a>
+            </div>
+        </div>
+</div>
 
 <div class="container">
-<div class="container_header">
-                <div class="container_button">
-                    <div class="container_img">
-                        <img src="../img/logo_2021_S.svg" alt="">
-                    </div>
-                    <div class="container_info">                
-                        <?php if(isset($_SESSION['user'])){ echo '<a class="button" href="../controllers/profile.php">Perfil</a>';} ?>
-                        <a>Empresas</a>
-                        <a>Emprendedores</a>
-                        <a>Provincias compras</a>
-                        <a>Turnos web</a>
-                        <a class="especial">BIP Personas</a>
-                        <a class="especial">BIP Empresas</a>
-                    </div>
-                </div>
-            </div>
+    <p>MIS TARJETAS</p>
+<div class="opciones">
+        
+            <i class="bi bi-arrow-left-right transButton"><a href="transfer.php">Transferir </a></i>
+        
+        <i class="bi bi-clipboard-data-fill">Pagar servicios</i>
+
+    </div> 
         <div class="card">
             <div class="card-inner">
                 <div class="front">
-                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <img src="../img/calabaza-te-mate-planta-yerba-mate-bombilla_650496-379.avif" class="map-img">
                     <div class="row">
                         <img class="top_imgs" src="https://i.ibb.co/G9pDnYJ/chip.png" width= "60px">
                         <img class="top_imgs" src="https://i.ibb.co/WHZ3nRJ/visa.png" width= "60px">
@@ -54,7 +64,7 @@
                         <p> <?php echo $rowTarjeta['cvv']; ?>  </p>
                     </div>
                     <div class="row card-text">
-                        <p>this is a virtual card design using HTML and CSS. You can aslo design something like this.</p>
+                        
                     </div>
                     <div class="row signature">
                         <p>CUSTOMER SIGNATURE</p>
@@ -62,5 +72,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="monto">
+            <span>Monto disponible: $<?php echo $rowTarjeta['monto_disp']; ?> <?php echo $rowTarjeta['moneda']; ?> </span> <br>
+            <span>Tarjeta <?php echo $rowTarjeta['estado_tarjeta'] ?></span><br>
+            <span>Fecha de vencimiento: <?php echo $rowTarjeta['fecha_vencimiento'] ?></span>
         </div>
     </div>
