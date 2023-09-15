@@ -313,3 +313,7 @@ a.button {
     font-size:larger;
     color:#557a00;
 }
+.msj_error {
+    font-size: 14px;
+    color: red;
+}

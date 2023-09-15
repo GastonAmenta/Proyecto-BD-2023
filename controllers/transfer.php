@@ -50,6 +50,22 @@ if (!empty($_POST)) {
             }
 
         }
+    }else{
+        if (mysqli_num_rows($resultUserTransfer) < 1) $message['alias'] =  "El alias ingresado es incorrecto";
+        // Ya existe una cuenta con ese nombre de usuario 
+        if ($rowMonto['monto_disp'] < $monto) $message['monto'] = "El dinero que tienes no es suficiente";
+
+        // Contraseña con menos de 8 caracteres
+        if ($_SESSION['user']['clave'] != $clave) $message['clave'] = "La clave ingresada es incorrecta";
+
+        // Maximo de caracteres
+        
+        if (strlen($descripcion) > 50) $message['descripcion'] = "La descripcion es demasiado larga";
+
+        // Campos vacios
+        if (!$alias) $message['alias'] = "Ingrese un alias destino";
+        if (!$monto) $message['monto'] = "Ingrese el monto";
+        if (!$clave) $message['clave'] = "Ingrese su clave";
     }
 }
 $view = "transfer";
