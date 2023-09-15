@@ -323,3 +323,7 @@ a.button {
     margin-bottom: 25px;
     justify-content: center;
 }
+.msj_error {
+    font-size: 14px;
+    color: red;
+}
