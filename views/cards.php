@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="back">
-                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <img src="../img/calabaza-te-mate-planta-yerba-mate-bombilla_650496-379.avif" class="map-img">
                     <div class="bar"></div>
                     <div class="row card-cvv">
                         <div>

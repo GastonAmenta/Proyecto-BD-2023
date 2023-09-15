@@ -184,6 +184,10 @@
 
 .monto{
     margin-top: 20px;
+    font-size:x-large;
+    font-style:inherit;
+    color: #04AA6D;
+    margin-bottom: 10px;
 }
 
 .transButton {
