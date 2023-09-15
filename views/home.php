@@ -54,7 +54,7 @@
                     </a>
                 </div>
                 <div class="container_prestamos">
-                    <a href="#">
+                    <a href="../controllers/loans.php">
                         <img src="../img/prestamo.png" alt="">
                         <p>prestamos</p>
                     </a>
