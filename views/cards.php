@@ -1,8 +1,25 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../css/style2.css">
-    
+</meta>
+
 <div class="container">
+<div class="container_header">
+                <div class="container_button">
+                    <div class="container_img">
+                        <img src="../img/logo_2021_S.svg" alt="">
+                    </div>
+                    <div class="container_info">                
+                        <?php if(isset($_SESSION['user'])){ echo '<a class="button" href="../controllers/profile.php">Perfil</a>';} ?>
+                        <a>Empresas</a>
+                        <a>Emprendedores</a>
+                        <a>Provincias compras</a>
+                        <a>Turnos web</a>
+                        <a class="especial">BIP Personas</a>
+                        <a class="especial">BIP Empresas</a>
+                    </div>
+                </div>
+            </div>
         <div class="card">
             <div class="card-inner">
                 <div class="front">

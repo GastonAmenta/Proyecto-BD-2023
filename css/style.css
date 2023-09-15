@@ -313,3 +313,8 @@ a.button {
     font-size:larger;
     color:#557a00;
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
