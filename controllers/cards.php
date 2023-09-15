@@ -12,7 +12,7 @@ if(!$resultTarjeta){
 }
 $rowTarjeta = mysqli_fetch_array($resultTarjeta, MYSQLI_ASSOC);
 
-//print_r($rowTarjeta);   
+print_r($_SESSION['user']);   
 
 $view = "cards";
-require_once "../views/layout.php";
+require_once "../views/layout2.php";
