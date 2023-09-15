@@ -4,11 +4,11 @@
         <div class="container_img-profile">
             <img src="../img/pngwing.com.png" alt="" style="width:150px;">
         </div>
-        <div class="container_name-profile">
-        <p style="margin-right:5px; margin-left:45px;"><?php echo ($_SESSION['user']['nombre']) ?></p>
-        <p><?php echo ($_SESSION['user']['apellido'])?></p>
-        </div>
-        <div class="container-interact-profile">
+            <div class="container_user-profile">
+                <div class="container_nombreapellido"> <p style="margin-right:5px; margin-left:45px;"><?php echo ($_SESSION['user']['nombre']) ?></p> <p><?php echo ($_SESSION['user']['apellido'])?></p> </div>                        
+                <div class="container_alias"> <a> <?php echo "Alias : ".($rowAlias['alias']) ?> </a> </div>        
+            </div>        
+        <div class="container-interact-profile">            
             <a href="../controllers/logout.php">Cerrar Sesión</a>
             <a href="#" id="edit-profile">Editar perfil</a>
         </div>
