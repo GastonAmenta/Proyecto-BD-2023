@@ -3,12 +3,6 @@ require_once "../includes/config.php";
 
 if (!$_SESSION['user']) {
     header("Location: login.php");
-}else{
-
-
-
-
-    
 }
 
 
