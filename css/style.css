@@ -1,11 +1,14 @@
 .form_container {
-    margin-top: 140px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
-    align-items:center;
-    
-    
+    align-items:center;        
 }
+
+#form_register {
+
+}
+
 .form_container_1{
     margin-top: 5px;
     display: flex;
