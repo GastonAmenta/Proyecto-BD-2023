@@ -27,7 +27,7 @@ if (!empty($_POST)) {
     $transferId = mysqli_fetch_assoc($resultUserTransfer);
     //print_r($transferId['usuarios_id']);
 
-    if (($rowMonto >= $monto) && ($_SESSION['user']['clave'] === $clave) ) {
+    if (($rowMonto >= $monto) && ($_SESSION['user']['clave'] === sha1($clave)) ) {
 
         $sqlTransferir1 = "UPDATE caja_ahorro SET monto_disp = monto_disp -'" . $monto . "' WHERE usuarios_id ='" . $id . "'";
         $resultTransferir1 = mysqli_query($conn, $sqlTransferir1);
