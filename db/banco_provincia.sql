@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-09-2023 a las 21:41:26
+-- Tiempo de generación: 06-10-2023 a las 18:24:00
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -48,13 +48,18 @@ CREATE TABLE `caja_ahorro` (
 --
 
 INSERT INTO `caja_ahorro` (`numr_tarjeta`, `usuarios_id`, `alias`, `cvv`, `monto_disp`, `tipo_tarjeta`, `limite`, `fecha_emision`, `fecha_vencimiento`, `estado_tarjeta`, `moneda`, `fecha_alta`, `fecha_baja`) VALUES
+(1770252560317236, 47, 'matiasHAQ2.bp', 501, 1000, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
+(2312691136195635, 45, 'MatiashT3P.bp', 967, 1000, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
 (2402005713803775, 41, '0', 308, 1000, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
 (3181839098410886, 0, '0', 955, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(3222658445616156, 43, 'matias.bp', 459, 1000, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
 (3600961973447459, 0, '0', 502, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (4409332347195537, 0, '0', 652, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(4493806108953316, 46, 'matiassQIB.bp', 209, 1000, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
 (4735670777869563, 0, '0', 405, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (5528461744332042, 25, 'Koala.Banana', 944, 1856, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (5555892124229880, 42, 'holaa', 118, 21, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
+(5911664128467233, 44, 'lolo3qR.bp', 505, 1000, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
 (6038420630079400, 39, '0', 423, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (6633366427368062, 0, '0', 837, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
 (7189545879781220, 0, '0', 307, 1000, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'PESOS ARG', '2023-09-01', NULL),
@@ -385,7 +390,12 @@ INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacim
 (39, 1234, 'sadf', 'asdf', 'a@asdf', '2023-08-29', '3da541559918a808c2402bba5012f6c60b27661c', '12341234', '12341234', 1234, 2, '3da541559918a808c2402bba5012f6c60b27661c', '0000-00-00', NULL),
 (40, 9234857, 'matias', 'herman', 'a@gmailcom', '2023-08-30', '92429d82a41e930486c6de5ebda9602d55c39986', '12341234', '12341234', 92348570, 1, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', NULL),
 (41, 1234123400, 'matias', 'herman', 'a@gmail.com', '2005-08-22', '1ef64cc99ec9cbc83d73bb1f26ca6787a3d8a1ff', '1234123400', '1234123400', 1234123400, 1, '0c422ba64421103f8f58fc3c8676caf9c7c73178', '2023-09-08', NULL),
-(42, 46913393, 'gaston', 'amenta', 'gaston@gmail.com', '2002-09-28', '0f3fde0103dd44077c040215a2fabd09a097aecc', '3414134134', 'hola', 8432382439, 3, 'c41975d1dae1cc69b16ad8892b8c77164e84ca39', '2023-09-08', NULL);
+(42, 46913393, 'gaston', 'amenta', 'gaston@gmail.com', '2002-09-28', '0f3fde0103dd44077c040215a2fabd09a097aecc', '3414134134', 'hola', 8432382439, 3, 'c41975d1dae1cc69b16ad8892b8c77164e84ca39', '2023-09-08', NULL),
+(43, 12340985, 'matias', 'herman', 'alsar@gmail.com', '2005-08-22', '53668ab2c9bf2dfbf1181ff10e50486017181561', '12340987', '12340987', 123409870, 2, 'e3f4984723f170e019365ec2b27545bfd617e9ae', '2023-09-15', NULL),
+(44, 15813467, 'lol', 'seeee', 'a@gmail.com', '2005-03-14', 'f12a1c43ff6f7dcbeb83a027e507e45807ffd85f', '15813467', '15813467', 15813467, 1, 'f12a1c43ff6f7dcbeb83a027e507e45807ffd85f', '2023-09-15', NULL),
+(45, 46875990, 'Matias', 'Herman', 'hermanmatias02@gmail.com', '2005-08-22', '4ba8f4163d03d3e94390ff55df4e315905bcb137', '1159055863', 'Espronceda 1930', 20468759900, 3, 'b11c73af11cd1a9b03ba89987f902a94802a512e', '2023-09-15', NULL),
+(46, 11111111, 'matias', 'herman', '11111111@11111111', '2023-10-06', 'a642a77abd7d4f51bf9226ceaf891fcbb5b299b8', '11111111', '11111111', 11111111, 1, 'a642a77abd7d4f51bf9226ceaf891fcbb5b299b8', '2023-10-06', NULL),
+(47, 22222222, 'matias', 'herman', '22222222@22222222', '2023-10-06', 'f638e2789006da9bb337fd5689e37a265a70f359', '22222222', '22222222', 22222222, 1, 'f638e2789006da9bb337fd5689e37a265a70f359', '2023-10-06', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -477,7 +487,7 @@ ALTER TABLE `transacciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
