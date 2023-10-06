@@ -1,5 +1,10 @@
-
+<div class="back_button" id="atras">
+        <a href="home.php">
+            <i class="fa fa-arrow-left" style="font-size:25px;color:black;font-style:inherit;"> Atras</i>
+        </a>
+    </div>
 <div class="container-profile">
+
     <div class="container-info-profile">
         <div class="container_img-profile">
             <img src="../img/pngwing.com.png" alt="" style="width:150px;">

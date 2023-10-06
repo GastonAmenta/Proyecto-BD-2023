@@ -397,6 +397,11 @@ a.button {
     width: 25%;
 }
 
-.loan_sheet_div table {
-    width: 50%;
+.loan_sheet_div table { 
+      width: 50%;
+}
+
+#atras{
+    margin-top: 25px;
+    margin-left: 150px;
 }
