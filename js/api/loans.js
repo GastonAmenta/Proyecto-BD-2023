@@ -1,9 +1,50 @@
 $(document).ready(function () {
-    btn = document.getElementById("loan_simulation_btn");
-    btn.disabled = true;
 
+    var btn = $("#loan_simulation_btn");
 
-})
+    btn.prop('disabled', true);
+    btn.css("background-color", "#CCD1D1");
+    btn.css("cursor", "default");
+
+    function checkConditions() {        
+        var loan_amount = $('#loan_amount').val();
+        var select_installments = $('#select-installments').val();
+        var password_loan = $('#password-loan').val();
+        var reason = $('reason').val();
+        
+        if( (loan_amount >= 1000 && loan_amount <= 100000) && (select_installments !== "Cuotas") && (password_loan !== "") && (reason !== "")){
+            btn.prop('disabled', false);
+            btn.css("background-color", "#04AA6D");
+            btn.css("cursor", "pointer");
+        }
+    }
+
+    $(document).on("click keypress", function() {
+        checkConditions();
+    });
+    
+    btn.click(function(e){             
+        e.preventDefault();
+        var loan_amount = $('#loan_amount').val();
+        var select_installments = $('#select-installments').val();
+        var password_loan = $('#password-loan').val();              
+        var reason = $('reason').val();
+
+        $.ajax({
+            type: 'POST',
+            url: 'api/loans.php',
+            data: {loan_amount: loan_amount, installments: select_installments, password: password_loan, reason: reason},
+            dataType: 'JSON',
+                success:function(r){
+                    if(r.message == "Se a simulado correctamente"){                                
+                        console.log(r);                            
+                    }else{
+                        alert(r.message_err);
+                    }
+                }
+        });        
+    })    
+});
 
 
 
@@ -13,26 +54,6 @@ $(document).ready(function () {
 
 
 /*
-
-$('#loan_simulation_btn').click(function(e){             
-    e.preventDefault();
-    
-    $.ajax({
-        type: 'POST',
-        url: '../api/loans.php',
-        data: {name: nameValue, username: usernameValue, email: emailValue, password: passwordValue, gender: genderValue, birth_date: dateValue},
-        dataType: 'JSON',
-            success:function(r){
-                if(r.message == "Se ha registrado correctamente"){                                
-                    console.log(r);
-                    window.location.href = '../views/layout.php'; 
-                }else{
-                    alert("Error al registrarce");
-                    console.log(r);
-                }
-            }
-    });
-})
 
 html = `        
 <table>

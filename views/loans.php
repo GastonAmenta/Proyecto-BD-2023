@@ -26,23 +26,24 @@
         <form class ="loans_form">     
 
             <div class="loan_amount_div">
-                <label>Min $1.000 - Max $100.000</label>
-                <input type="number" name="amount" id="loan_amount" placeholder="Monto" required  min="1000" max="100000">
+                <label>Min $1.000 - Max $1.000.000</label>
+                <input type="number" name="amount" id="loan_amount" placeholder="Monto" required  min="1000" max="1000000">
             </div>
             
             <div class="loans_select_div">                
-                <select class = "loans_select" id ="select-register" name ="select-register" required>
+                <select class = "loans_select" id ="select-installments" name ="select-register" required>
                     <option hidden selected>Cuotas</option>
-                    <option value= 1 > 3 </option>
-                    <option value= 1 > 6 </option>
-                    <option value= 1 > 12 </option>
-                    <option value= 1 > 18 </option>
-                    <option value= 1 > 24 </option>        
+                    <option value= 3> 3 </option>
+                    <option value= 6> 6 </option>
+                    <option value= 12> 12 </option>
+                    <option value= 18> 18 </option>
+                    <option value= 24> 24 </option>        
                 </select>         
             </div>            
 
             <div class="loan_password_div">
-                <input type="text" name="name" placeholder="Contraseña" required>
+                <input type="text" id="reason" placeholder="Razon del pedido" required>
+                <input type="text" id="password-loan" placeholder="Contraseña" required>
             </div>            
             
             <div class="loan_simulation_btn_div">
