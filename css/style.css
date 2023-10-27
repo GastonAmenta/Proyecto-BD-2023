@@ -409,3 +409,10 @@ a.button {
 .loan_password_div #reason{
     margin-bottom: 15px;
 }
+
+.loan-simulation_data{
+    display: none;
+    margin-top: 15px;    
+    width: 25%;
+    height: 200px;
+}
