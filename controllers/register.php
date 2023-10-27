@@ -60,11 +60,12 @@ if (!empty($_POST)){
                     
                     // Agregar el carácter aleatorio a la cadena aleatoria
                     $alias .= $caracteres_permitidos[$indice];
-                }                            
-
+                }          
+                $wholealias = preg_replace('/\s+/', '', (strtolower($_POST['name'].$alias.".bp")));                  
+                
                 $query_caja_ahorro = "INSERT INTO caja_ahorro(numr_tarjeta, usuarios_id, alias, cvv, monto_disp, tipo_tarjeta, limite, fecha_emision, fecha_vencimiento, estado_tarjeta, moneda, fecha_alta) 
-                VALUES('".rand(1000000000000000,9999999999999999)."' , '". intval($id) ."' , '". ($_POST['name'].$alias.".bp") ."' , '".rand(100,999) ."' , '". 1000 ."' , 'VISA', '". 1000000 ."' , '" . date('Y-m-d H', strtotime('+3 days', strtotime($fechaActual))) ."' , '" . $ultimoDiaMismoMesTresAnios . "' , 'ACTIVA' , 'Peso Argentino' , now())";
-            
+                VALUES('".rand(1000000000000000,9999999999999999)."' , '". intval($id) ."' , '". ($wholealias) ."' , '".rand(100,999) ."' , '". 1000 ."' , 'VISA', '". 1000000 ."' , '" . date('Y-m-d H', strtotime('+3 days', strtotime($fechaActual))) ."' , '" . $ultimoDiaMismoMesTresAnios . "' , 'ACTIVA' , 'Peso Argentino' , now())";
+                
                 $result_caja_ahorro = mysqli_query($conn,$query_caja_ahorro);
 
                 if(!$result_caja_ahorro){
