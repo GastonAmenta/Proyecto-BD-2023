@@ -10,85 +10,119 @@ var tel = document.getElementById('tel')
 var adress = document.getElementById('adress')
 
 button.addEventListener('click', (e) =>{
- e.preventDefault();
- let warnings = ""
+  e.preventDefault;
  let submit = 0
  let regularExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
  let regrexPass = /^[a-zA-Z0-9\-\/]+$/
 
 
  if (DNI.value.length > 9 ){
-    warnings += `DNI muy largo <br>`
+    setError(DNI, 'DNI muy largo')
  } else if (!DNI.value){
-    warnings += `Ingrese un DNI <br>`
+   setError(DNI, 'ingrese un DNI')
  } else if(DNI.value.length < 8){
-    warnings += `Ingrese un DNI valido <br>`
+   setError(DNI, 'ingrese un DNI valido')
  } else {
+   setSuccess(DNI)
     submit =+ 1
  }
 
 
  if (!email.value){
-    warnings += `Ingrese un email <br>`
+    setError(email, 'Ingrese un email')
  } else if(!regularExpression.test(email.value)){
-    warnings += `email no valido`
+    setError(email, 'Ingrese un email valido')
  } else {
+   setSuccess(email)
     submit += 1
  }
 
 
  if (!CUIL.value){
-    warnings += `Ingrese un CUIL <br>`
+    setError(CUIL, 'Ingrese el CUIL')
  } else{
+    setSuccess(CUIL)
     submit += 1
  }
 
 
  if (!Name.value){
-    warnings += `Ingrese su nombre <br>`
+    setError(Name,'Ingrese el nombre')
  } else {
+    setSuccess(Name)
     submit += 1 
  }
 
 
  if(!surname.value){
-    warnings += `Ingrese su apellido <br>`
+    setError(surname, 'ingrese el apellido')
  } else {
+    setSuccess (surname)
     submit += 1
  }
 
 
  if(!pass.value){
-    warnings += `Ingrese una contraseña`
+   setError(pass, 'ingrese la contraseña')
  } else if (!regrexPass.test(pass.value)){
-    warnings += `La contraseña solo puede contener: Letras, numeros, guiones y barras <br>`
+   setError(pass, `La contraseña solo puede contener: Letras, numeros, guiones y barras`)
  } else if (pass.value.length > 16){
-    warnings += `Contraseña muy larga <br>`
+   setError(pass,`Contraseña muy larga`)
  } else if (pass.value.length < 4){
-    warnings += `Contraseña muy corta <br>`
+   setError(pass,`Contraseña muy corta`)
  }else{
-    submit += 1
+   setSuccess(pass)
+   submit += 1
  }
 
 
- if(confirmPass != pass){
-    warnings += `La contraseña no coincide <br>`
- } else if(!confirmPass){
-    warnings += `Ingrese una contraseña para comparar`
+ if(confirmPass.value != pass.value){
+   setError(confirmPass,`La contraseña no coincide`)
+ } else if(!confirmPass.value){
+   setError(confirmPass,`Ingrese una contraseña para comparar`)
  } else {
-    submit += 1
+   setSuccess(confirmPass)
+   submit += 1
  }
 
 
  if(tel.value.length != 10){
-    warnings += `Ingrese un telefono valido`
+   setError(tel,`Ingrese un telefono valido`)
  } else if(!tel.value){
-    warnings += `Ingrese un telefono <br>`
+   setError(tel,`Ingrese un telefono`)
  }
+   else
+   {
+      setSuccess(tel)
+      submit += 1
+   }
+
+ if(!adress.value){
+   setError(adress,`Ingrese una direccion`)
+    }
+    else
+    {
+      setSuccess(adress)
+      submit += 1
+    }
 
 
- if(!adress){
-    warnings += `Ingrese una direccion`
- }
-console.log(warnings)
-})
+if(submit == 9){
+   
+}
+}
+)
+
+function setError(input, message){
+   const form_container = input.parentElement;
+   const small = form_container.querySelector('small');
+   form_container.className = 'input_reg_form error';
+   small.innerText = message;
+}
+
+function setSuccess(input){
+   const form_container = input.parentElement;
+   const small = form_container.querySelector('small');
+   form_container.className = 'input_reg_form success'
+}
+

@@ -409,3 +409,19 @@ a.button {
 .loan_password_div #reason{
     margin-bottom: 15px;
 }
+
+.form_container small{
+    color: red;
+    visibility: hidden;
+    line-height: inherit;
+    font-size: inherit;
+    
+}
+
+.input_reg_form.error small{
+    visibility: visible;
+}
+
+.input_reg_form.success small{
+    visibility: hidden;
+}
