@@ -31,7 +31,7 @@
             </div>
             
             <div class="loans_select_div">                
-                <select class = "loans_select" id ="select-installments" name ="select-register" required>
+                <select class = "loans_select" id ="select-installments" required>
                     <option hidden selected>Cuotas</option>
                     <option value= 3> 3 </option>
                     <option value= 6> 6 </option>
@@ -52,6 +52,12 @@
             
         </form>
     </div>
+    <div class="loan-simulation_data">
+        <div class="loan_simulation_btn_div">
+            <button id="loan_simulation_btn">Pedir prestamo</button>
+        </div>
+    </div>
+</div>
 
     <div class="loan_sheet_div">
         <!-- Contenido enviado por js -->

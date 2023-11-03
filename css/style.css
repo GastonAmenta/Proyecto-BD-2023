@@ -425,3 +425,10 @@ a.button {
 .input_reg_form.success small{
     visibility: hidden;
 }
+
+.loan-simulation_data{
+    display: none;
+    margin-top: 15px;    
+    width: 25%;
+    height: 200px;
+}
