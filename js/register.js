@@ -8,9 +8,10 @@ var pass = document.getElementById('pass')
 var confirmPass = document.getElementById('confirmpass')
 var tel = document.getElementById('tel')
 var adress = document.getElementById('adress')
-
+var form = document.getElementById('form_register')
 button.addEventListener('click', (e) =>{
-  e.preventDefault;
+  
+  e.preventDefault();
  let submit = 0
  let regularExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
  let regrexPass = /^[a-zA-Z0-9\-\/]+$/
@@ -24,7 +25,7 @@ button.addEventListener('click', (e) =>{
    setError(DNI, 'ingrese un DNI valido')
  } else {
    setSuccess(DNI)
-    submit =+ 1
+    submit += 1
  }
 
 
@@ -106,12 +107,10 @@ button.addEventListener('click', (e) =>{
       submit += 1
     }
 
-
-if(submit == 9){
-   
-}
-}
-)
+    if(submit == 9){
+      form.submit()
+    }
+})
 
 function setError(input, message){
    const form_container = input.parentElement;

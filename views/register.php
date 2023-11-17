@@ -42,7 +42,7 @@
             <div class = "form_container_1" style = "margin-bottom:10px ">
                 <div class = "input_reg_form" style = "margin-bottom : 15px"> <input type="text" name="answer" placeholder="Respuesta" > </div>                
                 <div class = "btns_register" >
-                    <button class = "btn_reg_form" id="btn_form_register">Registrarme</button>
+                    <button class = "btn_reg_form" type="submit" id="btn_form_register">Registrarme</button>
                     <div class = div_href_login>
                         <a class= "href_login" href="login.php">Iniciar sesion</a>
                     </div>
