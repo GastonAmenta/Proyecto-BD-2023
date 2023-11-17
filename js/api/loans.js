@@ -26,7 +26,7 @@ $(document).ready(function () {
     
     btn_simulation.click(function(e){    
         e.preventDefault();
-
+        var loan_sheet_div = $("#loan_sheet_div");
         var loan_amount = parseInt($('#loan_amount').val(), 10);
         var select_installments = parseInt($("#select-installments option:selected").val(), 10);
         var password_loan = $('#password-loan').val();              
@@ -39,15 +39,28 @@ $(document).ready(function () {
             dataType: 'JSON',
                 success:function(r){
                     if(r.message == "Se a simulado correctamente"){   
-                        document.write(html = `        
+                                                                                             
+                        sheet = `        
                             <table>
                                 <tr>
-                                    <th>Company</th>
-                                    <th>Contact</th>
-                                    <th>Country</th>
+                                    <th>MONTO</th>
+                                    <th>CUOTAS</th>
+                                    <th>PORCENTAJE DE INTERES</th>
+                                    <th>VALOR DEL INTERES</th>
+                                    <th>PORCENTAJE DE INTERES</th>   
+                                    <th>TOTAL A PAGAR</th>                                 
+                                    <th>VALOR /C CUOTA</th>
+                                </tr>
+                                <tr>
+                                    <td>r.data.monto</td>
+                                    <td>r.data.cuotas</td>
+                                    <td>r.data.porcentaje_interes</td>
+                                    <td>r.data.total_intereses</td>
+                                    <td>r.data.total</td>
+                                    <td>r.data.valor_cuota</td>                                    
                                 </tr>        
-                            </table>`);
-                            
+                            </table>`;
+                        loan_sheet_div.append(sheet) 
 
                     }else{
                         alert(r.message);

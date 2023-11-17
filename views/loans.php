@@ -59,7 +59,7 @@
     </div>
 </div>
 
-    <div class="loan_sheet_div">
+    <div class="loan_sheet_div" id="loan_sheet_div">
         <!-- Contenido enviado por js -->
     </div>
 </div>                
