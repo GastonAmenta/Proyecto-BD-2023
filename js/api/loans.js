@@ -1,10 +1,13 @@
 $(document).ready(function () {
 
     var btn_simulation = $("#loan_simulation_btn");
+    var btn_request = $("#loan_request_btn");
 
     btn_simulation.prop('disabled', true);
     btn_simulation.css("background-color", "#CCD1D1");
     btn_simulation.css("cursor", "default");
+    btn_request.css('display','none');
+    
 
     function checkConditions() {        
         var loan_amount = $('#loan_amount').val();
@@ -12,7 +15,7 @@ $(document).ready(function () {
         var password_loan = $('#password-loan').val();
         var reason = $('reason').val();
         
-        if( (loan_amount >= 1000 && loan_amount <= 100000) && (select_installments !== "Cuotas") && (password_loan !== "") && (reason !== "" || reason != null)){
+        if( (loan_amount >= 1000 && loan_amount <= 1000000) && (select_installments !== "Cuotas") && (password_loan !== "") && (reason !== "" || reason != null)){
             btn_simulation.prop('disabled', false);
             btn_simulation.css("background-color", "#04AA6D");
             btn_simulation.css("cursor", "pointer");
@@ -48,10 +51,6 @@ $(document).ready(function () {
             dataType: 'JSON',
                 success:function(r){
                     if(r.message == "Se a simulado correctamente"){  
-                        //DESACTIVO BTN SIMULAR
-                        btn_simulation.prop('disabled', true);
-                        btn_simulation.css("background-color", "#CCD1D1");
-                        btn_simulation.css("cursor", "default");
                         //DECLARO VARIABLES A MOSTRAR
                         var monto = r.data.monto;                                                         
                         var cuotas = r.data.cuotas;
@@ -60,7 +59,7 @@ $(document).ready(function () {
                         var total = r.data.total;
                         var valor_cuota = r.data.valor_cuota;
                         //PRESENTO
-                        sheet = `        
+                            sheet = `        
                             <table>
                                 <tr>
                                     <th>MONTO</th>
@@ -78,11 +77,16 @@ $(document).ready(function () {
                                     <td>$`+total+`</td>
                                     <td>$`+valor_cuota+`</td>                                    
                                 </tr>        
-                            </table>`;
-                        //MUESTRO
-                        loan_sheet_div.append(sheet) 
-                        btn_request_loan = `<button id="loan_request_btn">Pedir</button>`
-                        reques_btn.append(btn_request_loan)
+                            </table>`;  
+                        if(typeof(sheet) == "undefined"){
+                            loan_sheet_div.append(sheet);
+                        }else{
+                            loan_sheet_div.empty() 
+                            loan_sheet_div.append(sheet);
+                        }
+
+                        //MUESTRO BTN REQUEST
+                        btn_request.css('display','');
                     }else{
                         alert(r.message);
                         location.reload();
@@ -109,10 +113,10 @@ $(document).ready(function () {
                 success:function(r){
                     if(r.message == "Exito al pedir prestamo"){                                        
                         alert(r.message);
-
+                        $(location).attr('href', '../controllers/home.php');
                     }else{
                         alert(r.message);
-                        //location.reload();
+                        location.reload();
                     }
                 }
         });        

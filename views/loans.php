@@ -64,6 +64,7 @@
     </div>
     <div class="loan_request_btn_div" id="loan_request_btn_div">
         <!-- Contenido enviado por js -->
+        <button id="loan_request_btn">Pedir</button>
     </div>
 </div>                
 

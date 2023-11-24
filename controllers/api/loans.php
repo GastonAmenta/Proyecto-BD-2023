@@ -52,7 +52,7 @@ if(isset($password) && sha1($password) == $_SESSION['user']['clave']){
 
 
                 try{
-                    $insert_query = "INSERT INTO prestamos (nro_prestamo, usuario_id, monto, cuotas, tasa_interes, intereses, total_pagar, plazo_tiempo, total_pagado, descripcion_prestamo, fecha_alta) VALUES ('$nro_prestamo', '$usuario_id', '$monto', '$cuotas', '$p_interes', '$t_intereses', '$total', '$cuotas', 0 , '" .$_POST['reason']." ', now())";
+                    $insert_query = "INSERT INTO prestamos (nro_prestamo, usuario_id, monto, cuotas, tasa_interes, valor_intereses, total_pagar, total_pagado, descripcion_prestamo, fecha_alta) VALUES ('$nro_prestamo', '$usuario_id', '$monto', '$cuotas', '$p_interes', '$t_intereses', '$total' , 0 , '" .$_POST['reason']." ', now())";
                     mysqli_query($conn, $insert_query);
 
                     $update_query = "UPDATE caja_ahorro SET monto_disp = monto_disp + '$monto'";
@@ -60,10 +60,10 @@ if(isset($password) && sha1($password) == $_SESSION['user']['clave']){
 
                     mysqli_commit($conn);
 
-                    return print_r(json_encode(['message' => 'Exito al pedir prestamo.']));
+                    return print_r(json_encode(['message' => 'Exito al pedir prestamo']));
 
                 } catch (Exception $e){
-                    mysqli_rollback($tu_conexion);
+                    mysqli_rollback($conn);
                     echo "Error en la transacción: " . $e->getMessage();
                 }
             }
