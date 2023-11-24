@@ -341,8 +341,7 @@ a.button {
 
 .loan_amount_div,
 .loans_select_div,
-.loan_password_div,
-.loan_simulation_btn_div{
+.loan_password_div{
     display: flex;
     flex-direction: column;
 
@@ -358,7 +357,24 @@ a.button {
     height: 29.63px;
 }
 
+.loan_request_btn_div{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+
+.loan_request_btn_div button{ 
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 20%;
+    height: 29.63px;
+}
+
 .loan_simulation_btn_div{    
+    margin-top: 30px;
     display: flex;    
     align-items: center;
     justify-content: center;
@@ -380,6 +396,7 @@ a.button {
     margin-top: 30px;    
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 
     width: 100%;
     justify-content: center;

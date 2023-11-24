@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     var btn_simulation = $("#loan_simulation_btn");
-    var btn_get_loan = $("#get_loan");
 
     btn_simulation.prop('disabled', true);
     btn_simulation.css("background-color", "#CCD1D1");
@@ -13,24 +12,34 @@ $(document).ready(function () {
         var password_loan = $('#password-loan').val();
         var reason = $('reason').val();
         
-        if( (loan_amount >= 1000 && loan_amount <= 100000) && (select_installments !== "Cuotas") && (password_loan !== "") && (reason !== "")){
+        if( (loan_amount >= 1000 && loan_amount <= 100000) && (select_installments !== "Cuotas") && (password_loan !== "") && (reason !== "" || reason != null)){
             btn_simulation.prop('disabled', false);
             btn_simulation.css("background-color", "#04AA6D");
             btn_simulation.css("cursor", "pointer");
+        }else{
+            btn_simulation.prop('disabled', true);
+            btn_simulation.css("background-color", "#CCD1D1");
+            btn_simulation.css("cursor", "default");
         }
     }
-
-    $(document).on("click keypress", function() {
+    
+    $(document).on("click", function() {
+        checkConditions();
+    });
+    $(document).on("keyup", function() {
         checkConditions();
     });
     
     btn_simulation.click(function(e){    
         e.preventDefault();
         var loan_sheet_div = $("#loan_sheet_div");
+
         var loan_amount = parseInt($('#loan_amount').val(), 10);
         var select_installments = parseInt($("#select-installments option:selected").val(), 10);
         var password_loan = $('#password-loan').val();              
         var reason = $('#reason').val();        
+
+        var reques_btn = $('#loan_request_btn_div');
         
         $.ajax({
             type: 'POST',
@@ -38,30 +47,42 @@ $(document).ready(function () {
             data: {loan_amount: loan_amount, installments: select_installments, password: password_loan, reason: reason},
             dataType: 'JSON',
                 success:function(r){
-                    if(r.message == "Se a simulado correctamente"){   
-                                                                                             
+                    if(r.message == "Se a simulado correctamente"){  
+                        //DESACTIVO BTN SIMULAR
+                        btn_simulation.prop('disabled', true);
+                        btn_simulation.css("background-color", "#CCD1D1");
+                        btn_simulation.css("cursor", "default");
+                        //DECLARO VARIABLES A MOSTRAR
+                        var monto = r.data.monto;                                                         
+                        var cuotas = r.data.cuotas;
+                        var porcentaje_interes = r.data.porcentaje_interes;
+                        var total_interes = r.data.total_intereses;
+                        var total = r.data.total;
+                        var valor_cuota = r.data.valor_cuota;
+                        //PRESENTO
                         sheet = `        
                             <table>
                                 <tr>
                                     <th>MONTO</th>
                                     <th>CUOTAS</th>
                                     <th>PORCENTAJE DE INTERES</th>
-                                    <th>VALOR DEL INTERES</th>
-                                    <th>PORCENTAJE DE INTERES</th>   
+                                    <th>VALOR DEL INTERES</th>   
                                     <th>TOTAL A PAGAR</th>                                 
-                                    <th>VALOR /C CUOTA</th>
+                                    <th>VALOR CUOTA</th>
                                 </tr>
                                 <tr>
-                                    <td>r.data.monto</td>
-                                    <td>r.data.cuotas</td>
-                                    <td>r.data.porcentaje_interes</td>
-                                    <td>r.data.total_intereses</td>
-                                    <td>r.data.total</td>
-                                    <td>r.data.valor_cuota</td>                                    
+                                    <td>$`+monto+`</td>
+                                    <td>`+cuotas+`</td>
+                                    <td>`+porcentaje_interes+`%</td>                                    
+                                    <td>$`+total_interes+`</td>
+                                    <td>$`+total+`</td>
+                                    <td>$`+valor_cuota+`</td>                                    
                                 </tr>        
                             </table>`;
+                        //MUESTRO
                         loan_sheet_div.append(sheet) 
-
+                        btn_request_loan = `<button id="loan_request_btn">Pedir</button>`
+                        reques_btn.append(btn_request_loan)
                     }else{
                         alert(r.message);
                         location.reload();
@@ -70,13 +91,14 @@ $(document).ready(function () {
         });        
     })    
 
-    btn_get_loan.click(function(e){    
-        e.preventDefault();
+    $("#loan_request_btn_div").on("click", "#loan_request_btn", function(e) {  
+        e.preventDefault();        
 
         var loan_amount = parseInt($('#loan_amount').val(), 10);
         var select_installments = parseInt($("#select-installments option:selected").val(), 10);
         var password_loan = $('#password-loan').val();              
-        var reason = $('#reason').val();     
+        var reason = $('#reason').val();        
+
         var flag = true;   
         
         $.ajax({
@@ -85,11 +107,12 @@ $(document).ready(function () {
             data: {loan_amount: loan_amount, installments: select_installments, password: password_loan, reason: reason, flag: flag},
             dataType: 'JSON',
                 success:function(r){
-                    if(r.message == "prestamo acreditado"){                                        
-                        location.reload();   
+                    if(r.message == "Exito al pedir prestamo"){                                        
+                        alert(r.message);
+
                     }else{
                         alert(r.message);
-                        location.reload();
+                        //location.reload();
                     }
                 }
         });        

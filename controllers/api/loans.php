@@ -14,33 +14,61 @@ $CUOTAS = [
     24 => 429.33
 ];
 
-if(isset($_POST['password']) && sha1($_POST['password']) == $_SESSION['user']['clave']){
-    if(isset($_POST['loan_amount']) && $_POST['loan_amount'] >= 1000 && $_POST['loan_amount'] <= 1000000){
-        if(isset($_POST['installments']) && in_array($_POST['installments'], $opciones) && isset($_POST['reason'])){
+$password = $_POST['password'];
+$monto = $_POST['loan_amount'];
+$cuotas = $_POST['installments'];
+
+if(isset($password) && sha1($password) == $_SESSION['user']['clave']){
+    if(isset($monto) && $monto >= 1000 && $monto <= 1000000){
+        if(isset($cuotas) && in_array($cuotas, $opciones) && isset($_POST['reason'])){
+            if(!isset($_POST['flag']) || !($_POST['flag'])){
             
-            $monto = $_POST['loan_amount'];
-            $cuotas = $_POST['installments'];
-            $p_interes = $CUOTAS[$cuotas];
-            $t_intereses = ($_POST['loan_amount'] * (($CUOTAS[$cuotas])/100)) - $_POST['loan_amount'];
-            $total = $_POST['loan_amount'] * (($CUOTAS[$cuotas])/100);
-            $valor_cuota = $total/$cuotas;
+                $p_interes = $CUOTAS[$cuotas];
+                $t_intereses = $monto * ($p_interes/100);
+                $total = $monto + $t_intereses;
+                $valor_cuota = $total/$cuotas;
 
-            $resultado = array(
-                'message' => 'Se a simulado correctamente',
-                'data' => array(
-                    'monto' => $monto,
-                    'cuotas' => $cuotas,
-                    'porcentaje_interes' => $p_interes,
-                    'total_intereses' => $t_intereses,
-                    'total' => $total,
-                    'valor_cuota' => $valor_cuota
-                )
-            );        
+                $resultado = array(
+                    'message' => 'Se a simulado correctamente',
+                    'data' => array(
+                        'monto' => bcdiv($monto, '1', 2),
+                        'cuotas' => $cuotas,
+                        'porcentaje_interes' => $p_interes,
+                        'total_intereses' => bcdiv($t_intereses, '1', 2),
+                        'total' => bcdiv($total, '1', 2),
+                        'valor_cuota' => bcdiv($valor_cuota, '1', 2)
+                    )
+                );        
 
-            return print_r(json_encode($resultado));
+                return print_r(json_encode($resultado));
+            }else{
+                $nro_prestamo = rand(10000, 9999999);
+                $usuario_id = $_SESSION["user"]['ID'];
+                
+                $p_interes = $CUOTAS[$cuotas];
+                $t_intereses = $monto * ($p_interes/100);
+                $total = $monto + $t_intereses;
+                $valor_cuota = $total/$cuotas;
 
+
+                try{
+                    $insert_query = "INSERT INTO prestamos (nro_prestamo, usuario_id, monto, cuotas, tasa_interes, intereses, total_pagar, plazo_tiempo, total_pagado, descripcion_prestamo, fecha_alta) VALUES ('$nro_prestamo', '$usuario_id', '$monto', '$cuotas', '$p_interes', '$t_intereses', '$total', '$cuotas', 0 , '" .$_POST['reason']." ', now())";
+                    mysqli_query($conn, $insert_query);
+
+                    $update_query = "UPDATE caja_ahorro SET monto_disp = monto_disp + '$monto'";
+                    mysqli_query($conn, $update_query);
+
+                    mysqli_commit($conn);
+
+                    return print_r(json_encode(['message' => 'Exito al pedir prestamo.']));
+
+                } catch (Exception $e){
+                    mysqli_rollback($tu_conexion);
+                    echo "Error en la transacción: " . $e->getMessage();
+                }
+            }
         }else{
-            return print_r(json_encode(['message' => 'Error al intentar simular.', 'message_err' => 'Las cuotas seleccionadas no esta dentro del rango aceptado.'. print_r(in_array($_POST['installments'], $opciones))]));
+            return print_r(json_encode(['message' => 'Error al intentar simular.', 'message_err' => 'Las cuotas seleccionadas no esta dentro del rango aceptado.'. print_r(in_array($cuotas, $opciones))]));
         }
     }else{
         return print_r(json_encode(['message' => 'Error al intentar simular.', 'message_err' => 'El valor del prestamo no esta dentro del rango aceptado.']));

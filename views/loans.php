@@ -43,7 +43,7 @@
 
             <div class="loan_password_div">
                 <input type="text" id="reason" placeholder="Razon del pedido" required>
-                <input type="text" id="password-loan" placeholder="Contraseña" required>
+                <input type="password" id="password-loan" placeholder="Contraseña" required>
             </div>            
             
             <div class="loan_simulation_btn_div">
@@ -60,6 +60,9 @@
 </div>
 
     <div class="loan_sheet_div" id="loan_sheet_div">
+        <!-- Contenido enviado por js -->
+    </div>
+    <div class="loan_request_btn_div" id="loan_request_btn_div">
         <!-- Contenido enviado por js -->
     </div>
 </div>                
