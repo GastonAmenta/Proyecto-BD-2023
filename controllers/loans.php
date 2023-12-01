@@ -11,7 +11,7 @@ $sqlCheck = "SELECT *
             FROM prestamos
             LEFT JOIN pagos
             ON prestamos.prestamo_id = pagos.prestamo_id
-            WHERE prestamos.usuario_id = '" . $_SESSION['user']['ID'] . "'";
+            WHERE prestamos.usuario_id = '" . $_SESSION['user']['ID'] . "' AND pagos.fecha_baja IS NULL";
 
 $resultCheck = mysqli_query($conn, $sqlCheck);
 

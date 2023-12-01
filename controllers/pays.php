@@ -9,11 +9,11 @@ $sqlPays = "SELECT pagos.*
             FROM prestamos
             LEFT JOIN pagos
             ON prestamos.prestamo_id = pagos.prestamo_id
-            WHERE prestamos.usuario_id = '" . $_SESSION['user']['ID'] . "'";
+            WHERE prestamos.usuario_id = '" . $_SESSION['user']['ID'] . "' AND pagos.fecha_baja IS  NULL";
 
 $resultPays = mysqli_query($conn, $sqlPays);
 
-if (mysqli_num_rows($resultPays) < 0) {
+if (mysqli_num_rows($resultPays) < 1) {
     header("Location: home.php");
 }
 
