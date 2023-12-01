@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2023 a las 03:57:45
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 01-12-2023 a las 17:30:49
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `caja_ahorro` (
   `usuarios_id` int(11) NOT NULL,
   `alias` varchar(50) NOT NULL,
   `cvv` int(11) NOT NULL,
-  `monto_disp` int(11) NOT NULL,
+  `monto_disp` float NOT NULL,
   `tipo_tarjeta` varchar(4) NOT NULL,
   `limite` int(11) NOT NULL,
   `fecha_emision` date NOT NULL,
@@ -41,62 +41,51 @@ CREATE TABLE `caja_ahorro` (
   `moneda` varchar(14) NOT NULL,
   `fecha_alta` date NOT NULL,
   `fecha_baja` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `caja_ahorro`
 --
 
 INSERT INTO `caja_ahorro` (`numr_tarjeta`, `usuarios_id`, `alias`, `cvv`, `monto_disp`, `tipo_tarjeta`, `limite`, `fecha_emision`, `fecha_vencimiento`, `estado_tarjeta`, `moneda`, `fecha_alta`, `fecha_baja`) VALUES
-(1322596128559891, 49, 'matiasjwfx.bp', 100, 1385322, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
-(1660955806740670, 50, 'matiasjosexd3h.bp', 810, 1385322, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
-(1770252560317236, 47, 'matiasHAQ2.bp', 501, 1385322, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
-(2160827098600287, 48, 'matias jose3ys2.bp', 541, 1385322, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
-(2312691136195635, 45, 'MatiashT3P.bp', 967, 1385322, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
-(2402005713803775, 41, '0', 308, 1385322, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
-(2632519263376186, 54, 'arielzpqf.bp', 122, 121000, 'VISA', 1000000, '2023-12-03', '2026-11-30', 'ACTIVA', 'Peso Argentino', '2023-11-29', NULL),
-(3097042494662222, 51, 'matiaswktt.bp', 267, 1385322, 'VISA', 1000000, '2023-10-23', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-20', NULL),
-(3181839098410886, 0, '0', 955, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(3222658445616156, 43, 'matias.bp', 459, 1385322, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
-(3289690920875601, 53, 'asdftrd2.bp', 880, 1385322, 'VISA', 1000000, '2023-11-27', '2026-11-30', 'ACTIVA', 'Peso Argentino', '2023-11-24', NULL),
-(3600961973447459, 0, '0', 502, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(4409332347195537, 0, '0', 652, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(4493806108953316, 46, 'matiassQIB.bp', 209, 1385322, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
-(4735670777869563, 0, '0', 405, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(5528461744332042, 25, 'Koala.Banana', 944, 1386178, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(5555892124229880, 42, 'holaa', 118, 1370520, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
-(5911664128467233, 44, 'lolo3qR.bp', 505, 1385322, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
-(6038420630079400, 39, '0', 423, 1385322, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(6595505035785632, 52, 'testxnnl.bp', 210, 1385322, 'VISA', 1000000, '2023-10-30', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-27', NULL),
-(6633366427368062, 0, '0', 837, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(7189545879781220, 0, '0', 307, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'PESOS ARG', '2023-09-01', NULL),
-(7225723760992974, 0, '0', 968, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(7691518271253675, 0, '0', 739, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(7699259884815750, 0, '0', 103, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(8017760308268569, 40, '0', 667, 1385322, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(8128917088872862, 0, '0', 607, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(9008612615782931, 11, '0', 936, 2718478, 'VISA', 100000, '2010-11-06', '2027-04-16', 'habilitada', 'Peso Argentino', '2011-12-15', NULL),
-(9008633168218445, 5, '0', 650, 1488927, 'VISA', 100000, '2011-05-03', '2026-12-18', 'habilitada', 'Dolar', '2022-05-30', NULL),
-(9028778274394882, 11, '0', 909, 1863172, 'VISA', 100000, '2012-10-22', '2027-06-19', 'pausada', 'Dolar', '2022-03-05', NULL),
+(1322596128559891, 49, 'matiasjwfx.bp', 100, 1385320, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
+(1660955806740670, 50, 'matiasjosexd3h.bp', 810, 1385320, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
+(1770252560317236, 47, 'matiasHAQ2.bp', 501, 1385320, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
+(2160827098600287, 48, 'matias jose3ys2.bp', 541, 1385320, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
+(2312691136195635, 45, 'MatiashT3P.bp', 967, 1385320, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
+(2402005713803775, 41, '0', 308, 1385320, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
+(2632519263376186, 54, 'arielzpqf.bp', 122, 120320, 'VISA', 1000000, '2023-12-03', '2026-11-30', 'ACTIVA', 'Peso Argentino', '2023-11-29', NULL),
+(3097042494662222, 51, 'matiaswktt.bp', 267, 1385320, 'VISA', 1000000, '2023-10-23', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-20', NULL),
+(3222658445616156, 43, 'matias.bp', 459, 1385320, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
+(3289690920875601, 53, 'asdftrd2.bp', 880, 1385320, 'VISA', 1000000, '2023-11-27', '2026-11-30', 'ACTIVA', 'Peso Argentino', '2023-11-24', NULL),
+(4493806108953316, 46, 'matiassQIB.bp', 209, 1385320, 'VISA', 1000000, '2023-10-09', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-06', NULL),
+(5528461744332042, 25, 'Koala.Banana', 944, 1386180, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(5555892124229880, 42, 'gaston3pkg.bp', 118, 1370520, 'VISA', 1000000, '2023-09-11', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-08', NULL),
+(5911664128467233, 44, 'lolo3qR.bp', 505, 1385320, 'VISA', 1000000, '2023-09-18', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-15', NULL),
+(6038420630079400, 39, '0', 423, 1385320, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(6595505035785632, 52, 'testxnnl.bp', 210, 1385320, 'VISA', 1000000, '2023-10-30', '2026-10-31', 'ACTIVA', 'Peso Argentino', '2023-10-27', NULL),
+(8017760308268569, 40, '0', 667, 1385320, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
+(9008612615782931, 11, '0', 936, 2718480, 'VISA', 100000, '2010-11-06', '2027-04-16', 'habilitada', 'Peso Argentino', '2011-12-15', NULL),
+(9008633168218445, 5, '0', 650, 1488930, 'VISA', 100000, '2011-05-03', '2026-12-18', 'habilitada', 'Dolar', '2022-05-30', NULL),
+(9028778274394882, 11, '0', 909, 1863170, 'VISA', 100000, '2012-10-22', '2027-06-19', 'pausada', 'Dolar', '2022-03-05', NULL),
 (9063806249426055, 14, '0', 231, 3326840, 'VISA', 100000, '2012-02-15', '2027-02-10', 'habilitada', 'Peso Argentino', '2014-11-11', NULL),
-(9102790471050286, 12, '0', 533, 2697509, 'VISA', 100000, '2010-06-22', '2027-06-10', 'bloqueada', 'Peso Argentino', '2019-03-07', '2022-09-07'),
-(9108905504885557, 16, '0', 107, 2468207, 'VISA', 100000, '2011-07-11', '2024-05-05', 'habilitada', 'Peso Argentino', '2012-01-17', NULL),
-(9280130175076040, 12, '0', 801, 2232321, 'VISA', 100000, '2010-05-09', '2025-07-17', 'habilitada', 'Peso Argentino', '2012-02-01', NULL),
-(9281584351062836, 15, '0', 109, 2047331, 'VISA', 100000, '2011-09-05', '2027-04-07', 'habilitada', 'Dolar', '2018-11-28', NULL),
-(9393674959172466, 15, '0', 505, 1879898, 'VISA', 100000, '2011-02-07', '2027-03-05', 'habilitada', 'Dolar', '2020-05-20', NULL),
-(9412445785339079, 1, '0', 123, 1615815, 'VISA', 100000, '2012-06-13', '2026-03-30', 'habilitada', 'Peso Argentino', '2019-06-21', NULL),
-(9444545709939264, 20, '0', 313, 2872576, 'VISA', 100000, '2012-03-03', '2026-04-13', 'habilitada', 'Dolar', '2010-01-07', NULL),
-(9470132552165830, 10, '0', 159, 3113594, 'VISA', 100000, '2012-02-23', '2026-03-18', 'pausada', 'Peso Argentino', '2013-01-17', NULL),
+(9102790471050286, 12, '0', 533, 2697510, 'VISA', 100000, '2010-06-22', '2027-06-10', 'bloqueada', 'Peso Argentino', '2019-03-07', '2022-09-07'),
+(9108905504885557, 16, '0', 107, 2468210, 'VISA', 100000, '2011-07-11', '2024-05-05', 'habilitada', 'Peso Argentino', '2012-01-17', NULL),
+(9280130175076040, 12, '0', 801, 2232320, 'VISA', 100000, '2010-05-09', '2025-07-17', 'habilitada', 'Peso Argentino', '2012-02-01', NULL),
+(9281584351062836, 15, '0', 109, 2047330, 'VISA', 100000, '2011-09-05', '2027-04-07', 'habilitada', 'Dolar', '2018-11-28', NULL),
+(9393674959172466, 15, '0', 505, 1879900, 'VISA', 100000, '2011-02-07', '2027-03-05', 'habilitada', 'Dolar', '2020-05-20', NULL),
+(9412445785339079, 1, '0', 123, 1615820, 'VISA', 100000, '2012-06-13', '2026-03-30', 'habilitada', 'Peso Argentino', '2019-06-21', NULL),
+(9444545709939264, 20, '0', 313, 2872580, 'VISA', 100000, '2012-03-03', '2026-04-13', 'habilitada', 'Dolar', '2010-01-07', NULL),
+(9470132552165830, 10, '0', 159, 3113590, 'VISA', 100000, '2012-02-23', '2026-03-18', 'pausada', 'Peso Argentino', '2013-01-17', NULL),
 (9487678145707285, 11, '0', 608, 2231240, 'VISA', 100000, '2012-06-03', '2026-08-23', 'habilitada', 'Peso Argentino', '2018-06-07', NULL),
-(9499997748530813, 17, '0', 763, 1857502, 'VISA', 100000, '2010-01-13', '2024-12-07', 'habilitada', 'Dolar', '2023-03-26', NULL),
-(9636434374829233, 13, '0', 689, 2427064, 'VISA', 100000, '2012-04-08', '2027-03-29', 'habilitada', 'Peso Argentino', '2015-09-06', NULL),
-(9698516100868343, 2, '0', 273, 2556325, 'VISA', 100000, '2010-10-19', '2024-02-12', 'habilitada', 'Peso Argentino', '2013-01-24', NULL),
-(9704485861863629, 0, '0', 712, 1378410, 'VISA', 1000000, '2023-09-04', '2026-09-30', 'ACTIVA', 'Peso Argentino', '2023-09-01', NULL),
-(9801494123577617, 11, '0', 622, 2209085, 'VISA', 100000, '2010-11-14', '2027-07-25', 'habilitada', 'Dolar', '2011-09-26', NULL),
-(9810301662981351, 9, '0', 374, 1802156, 'VISA', 100000, '2012-12-20', '2026-07-19', 'bloqueada', 'Peso Argentino', '2019-01-13', '2023-07-12'),
-(9853552574253666, 16, '0', 559, 2350144, 'VISA', 100000, '2011-04-26', '2026-04-27', 'habilitada', 'Dolar', '2020-01-26', NULL),
-(9905215659879409, 20, '0', 890, 2806179, 'VISA', 100000, '2012-06-20', '2024-09-11', 'pausada', 'Dolar', '2019-05-27', NULL),
-(9947200681663303, 18, '0', 533, 3035662, 'VISA', 100000, '2012-10-19', '2025-02-08', 'pausada', 'Peso Argentino', '2013-12-28', NULL);
+(9499997748530813, 17, '0', 763, 1857500, 'VISA', 100000, '2010-01-13', '2024-12-07', 'habilitada', 'Dolar', '2023-03-26', NULL),
+(9636434374829233, 13, '0', 689, 2427060, 'VISA', 100000, '2012-04-08', '2027-03-29', 'habilitada', 'Peso Argentino', '2015-09-06', NULL),
+(9698516100868343, 2, '0', 273, 2556320, 'VISA', 100000, '2010-10-19', '2024-02-12', 'habilitada', 'Peso Argentino', '2013-01-24', NULL),
+(9801494123577617, 11, '0', 622, 2209080, 'VISA', 100000, '2010-11-14', '2027-07-25', 'habilitada', 'Dolar', '2011-09-26', NULL),
+(9810301662981351, 9, '0', 374, 1802160, 'VISA', 100000, '2012-12-20', '2026-07-19', 'bloqueada', 'Peso Argentino', '2019-01-13', '2023-07-12'),
+(9853552574253666, 16, '0', 559, 2350140, 'VISA', 100000, '2011-04-26', '2026-04-27', 'habilitada', 'Dolar', '2020-01-26', NULL),
+(9905215659879409, 20, '0', 890, 2806180, 'VISA', 100000, '2012-06-20', '2024-09-11', 'pausada', 'Dolar', '2019-05-27', NULL),
+(9947200681663303, 18, '0', 533, 3035660, 'VISA', 100000, '2012-10-19', '2025-02-08', 'pausada', 'Peso Argentino', '2013-12-28', NULL);
 
 -- --------------------------------------------------------
 
@@ -115,7 +104,7 @@ CREATE TABLE `credito` (
   `estado` varchar(10) NOT NULL,
   `moneda` varchar(14) NOT NULL,
   `fecha_baja` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `credito`
@@ -158,62 +147,59 @@ CREATE TABLE `pagos` (
   `prestamo_id` int(11) NOT NULL,
   `monto` float NOT NULL,
   `nro_cuota` int(11) NOT NULL,
-  `fecha_pago` datetime NOT NULL,
+  `fecha_pago` date NOT NULL,
   `estado_pago` varchar(50) NOT NULL DEFAULT 'espera',
   `fecha_alta` datetime NOT NULL,
   `fecha_baja` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pagos`
 --
 
 INSERT INTO `pagos` (`pago_id`, `prestamo_id`, `monto`, `nro_cuota`, `fecha_pago`, `estado_pago`, `fecha_alta`, `fecha_baja`) VALUES
-(3, 59, 1111, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:10:46', NULL),
-(4, 59, 1111, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:10:46', NULL),
-(5, 59, 1111, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:10:46', NULL),
-(6, 60, 1000, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:12:26', NULL),
-(7, 60, 1000, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:12:26', NULL),
-(8, 60, 1000, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:12:26', NULL),
-(9, 61, 1000, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:12:28', NULL),
-(10, 61, 1000, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:12:28', NULL),
-(11, 61, 1000, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:12:28', NULL),
-(12, 61, 1000, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:33:06', NULL),
-(13, 61, 1000, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:33:06', NULL),
-(14, 61, 1000, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:33:06', NULL),
-(15, 62, 100000, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:33:30', NULL),
-(16, 62, 100000, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:33:30', NULL),
-(17, 62, 100000, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:33:30', NULL),
-(18, 63, 1111, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:37:22', NULL),
-(19, 63, 1111, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:37:22', NULL),
-(20, 63, 1111, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:37:22', NULL),
-(21, 65, 11111, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:40:33', NULL),
-(22, 65, 11111, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:40:33', NULL),
-(23, 65, 11111, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:40:33', NULL),
-(24, 66, 11111, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:40:54', NULL),
-(25, 66, 11111, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:40:54', NULL),
-(26, 66, 11111, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:40:54', NULL),
-(27, 66, 11111, 4, '2024-03-24 00:00:00', 'espera', '2023-11-24 16:40:55', NULL),
-(28, 66, 11111, 5, '2024-04-24 00:00:00', 'espera', '2023-11-24 16:40:55', NULL),
-(29, 66, 11111, 6, '2024-05-24 00:00:00', 'espera', '2023-11-24 16:40:55', NULL),
-(30, 68, 111111, 1, '2023-12-24 00:00:00', 'espera', '2023-11-24 16:44:34', NULL),
-(31, 68, 111111, 2, '2024-01-24 00:00:00', 'espera', '2023-11-24 16:44:34', NULL),
-(32, 68, 111111, 3, '2024-02-24 00:00:00', 'espera', '2023-11-24 16:44:34', NULL),
-(33, 68, 111111, 4, '2024-03-24 00:00:00', 'espera', '2023-11-24 16:44:34', NULL),
-(34, 68, 111111, 5, '2024-04-24 00:00:00', 'espera', '2023-11-24 16:44:34', NULL),
-(35, 68, 111111, 6, '2024-05-24 00:00:00', 'espera', '2023-11-24 16:44:34', NULL),
-(36, 69, 3455.5, 1, '2023-11-29 00:00:00', 'Pagado', '2023-11-29 22:19:23', '2023-11-29 23:54:47'),
-(37, 69, 3455.5, 2, '2024-01-30 00:00:00', 'espera', '2023-11-29 22:19:23', NULL),
-(38, 69, 3455.5, 3, '2024-03-01 00:00:00', 'espera', '2023-11-29 22:19:23', NULL),
-(39, 69, 3455.5, 4, '2024-03-30 00:00:00', 'espera', '2023-11-29 22:19:23', NULL),
-(40, 69, 3455.5, 5, '2024-04-30 00:00:00', 'espera', '2023-11-29 22:19:23', NULL),
-(41, 69, 3455.5, 6, '2024-05-30 00:00:00', 'espera', '2023-11-29 22:19:23', NULL),
-(42, 70, 120000, 1, '2023-12-30 00:00:00', 'espera', '2023-11-29 23:27:09', NULL),
-(43, 70, 120000, 2, '2024-01-30 00:00:00', 'espera', '2023-11-29 23:27:09', NULL),
-(44, 70, 120000, 3, '2024-03-01 00:00:00', 'espera', '2023-11-29 23:27:09', NULL),
-(45, 70, 120000, 4, '2024-03-30 00:00:00', 'espera', '2023-11-29 23:27:09', NULL),
-(46, 70, 120000, 5, '2024-04-30 00:00:00', 'espera', '2023-11-29 23:27:09', NULL),
-(47, 70, 120000, 6, '2024-05-30 00:00:00', 'espera', '2023-11-29 23:27:09', NULL);
+(3, 59, 1111, 1, '2023-12-24', 'espera', '2023-11-24 16:10:46', NULL),
+(4, 59, 1111, 2, '2024-01-24', 'espera', '2023-11-24 16:10:46', NULL),
+(5, 59, 1111, 3, '2024-02-24', 'espera', '2023-11-24 16:10:46', NULL),
+(6, 60, 1000, 1, '2023-12-24', 'espera', '2023-11-24 16:12:26', NULL),
+(7, 60, 1000, 2, '2024-01-24', 'espera', '2023-11-24 16:12:26', NULL),
+(8, 60, 1000, 3, '2024-02-24', 'espera', '2023-11-24 16:12:26', NULL),
+(9, 61, 1000, 1, '2023-12-24', 'espera', '2023-11-24 16:12:28', NULL),
+(10, 61, 1000, 2, '2024-01-24', 'espera', '2023-11-24 16:12:28', NULL),
+(11, 61, 1000, 3, '2024-02-24', 'espera', '2023-11-24 16:12:28', NULL),
+(12, 61, 1000, 1, '2023-12-24', 'espera', '2023-11-24 16:33:06', NULL),
+(13, 61, 1000, 2, '2024-01-24', 'espera', '2023-11-24 16:33:06', NULL),
+(14, 61, 1000, 3, '2024-02-24', 'espera', '2023-11-24 16:33:06', NULL),
+(15, 62, 100000, 1, '2023-12-24', 'espera', '2023-11-24 16:33:30', NULL),
+(16, 62, 100000, 2, '2024-01-24', 'espera', '2023-11-24 16:33:30', NULL),
+(17, 62, 100000, 3, '2024-02-24', 'espera', '2023-11-24 16:33:30', NULL),
+(18, 63, 1111, 1, '2023-12-24', 'espera', '2023-11-24 16:37:22', NULL),
+(19, 63, 1111, 2, '2024-01-24', 'espera', '2023-11-24 16:37:22', NULL),
+(20, 63, 1111, 3, '2024-02-24', 'espera', '2023-11-24 16:37:22', NULL),
+(21, 65, 11111, 1, '2023-12-24', 'espera', '2023-11-24 16:40:33', NULL),
+(22, 65, 11111, 2, '2024-01-24', 'espera', '2023-11-24 16:40:33', NULL),
+(23, 65, 11111, 3, '2024-02-24', 'espera', '2023-11-24 16:40:33', NULL),
+(24, 66, 11111, 1, '2023-12-24', 'espera', '2023-11-24 16:40:54', NULL),
+(25, 66, 11111, 2, '2024-01-24', 'espera', '2023-11-24 16:40:54', NULL),
+(26, 66, 11111, 3, '2024-02-24', 'espera', '2023-11-24 16:40:54', NULL),
+(27, 66, 11111, 4, '2024-03-24', 'espera', '2023-11-24 16:40:55', NULL),
+(28, 66, 11111, 5, '2024-04-24', 'espera', '2023-11-24 16:40:55', NULL),
+(29, 66, 11111, 6, '2024-05-24', 'espera', '2023-11-24 16:40:55', NULL),
+(30, 68, 111111, 1, '2023-12-24', 'espera', '2023-11-24 16:44:34', NULL),
+(31, 68, 111111, 2, '2024-01-24', 'espera', '2023-11-24 16:44:34', NULL),
+(32, 68, 111111, 3, '2024-02-24', 'espera', '2023-11-24 16:44:34', NULL),
+(33, 68, 111111, 4, '2024-03-24', 'espera', '2023-11-24 16:44:34', NULL),
+(34, 68, 111111, 5, '2024-04-24', 'espera', '2023-11-24 16:44:34', NULL),
+(35, 68, 111111, 6, '2024-05-24', 'espera', '2023-11-24 16:44:34', NULL),
+(36, 69, 3455.5, 1, '2023-11-29', 'Pagado', '2023-11-29 22:19:23', '2023-11-29 23:54:47'),
+(37, 69, 3455.5, 2, '2024-01-30', 'espera', '2023-11-29 22:19:23', NULL),
+(38, 69, 3455.5, 3, '2024-03-01', 'espera', '2023-11-29 22:19:23', NULL),
+(39, 69, 3455.5, 4, '2024-03-30', 'espera', '2023-11-29 22:19:23', NULL),
+(40, 69, 3455.5, 5, '2024-04-30', 'espera', '2023-11-29 22:19:23', NULL),
+(41, 69, 3455.5, 6, '2024-05-30', 'espera', '2023-11-29 22:19:23', NULL),
+(48, 71, 606.471, 1, '2023-11-28', 'Pago atrasado', '2023-12-01 13:24:28', '2023-12-01 13:25:25'),
+(49, 71, 536.7, 2, '2023-12-01', 'Pagado', '2023-12-01 13:24:28', '2023-12-01 13:26:38'),
+(50, 71, 536.7, 3, '2023-12-01', 'Pagado', '2023-12-01 13:24:28', '2023-12-01 13:26:38');
 
 -- --------------------------------------------------------
 
@@ -232,7 +218,7 @@ CREATE TABLE `plazo_fijo` (
   `nro_referencia` int(11) NOT NULL,
   `fecha_alta` date NOT NULL,
   `fecha_baja` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `plazo_fijo`
@@ -274,7 +260,7 @@ INSERT INTO `plazo_fijo` (`id`, `usuario_id`, `monto`, `tasa_interes`, `plazo`, 
 CREATE TABLE `preguntas` (
   `id` int(11) NOT NULL,
   `pregunta` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `preguntas`
@@ -307,7 +293,7 @@ CREATE TABLE `prestamos` (
   `descripcion_prestamo` varchar(50) NOT NULL,
   `fecha_alta` date NOT NULL,
   `fecha_baja` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `prestamos`
@@ -383,7 +369,7 @@ INSERT INTO `prestamos` (`prestamo_id`, `usuario_id`, `nro_prestamo`, `monto`, `
 (67, 53, 471762, 111111, 6, 107, 119255, 230366, 0, 'asdf ', '2023-11-24', NULL),
 (68, 53, 4439762, 111111, 6, 107, 119255, 230366, 0, 'asdf ', '2023-11-24', NULL),
 (69, 42, 9812146, 10000, 6, 107, 10733, 20733, 10366.5, 'lol ', '2023-11-29', NULL),
-(70, 54, 8854668, 120000, 6, 107, 128796, 248796, 0, 'testeando ', '2023-11-29', NULL);
+(71, 54, 5247786, 1000, 3, 54, 537, 1606.47, 1679.87, 'quiero plata ', '2023-12-01', NULL);
 
 -- --------------------------------------------------------
 
@@ -397,10 +383,10 @@ CREATE TABLE `transacciones` (
   `cuenta_origen` int(11) NOT NULL,
   `cuenta_destino` int(11) DEFAULT NULL,
   `tipo_transaccion` varchar(13) NOT NULL,
-  `monto` int(11) NOT NULL,
+  `monto` float NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
   `estado` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `transacciones`
@@ -439,7 +425,10 @@ INSERT INTO `transacciones` (`id_transaccion`, `fecha_hora`, `cuenta_origen`, `c
 (30, '2023-09-08 16:03:36', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
 (31, '2023-09-08 16:04:36', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
 (32, '2023-09-08 16:04:51', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
-(33, '2023-09-08 16:05:08', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa');
+(33, '2023-09-08 16:05:08', 42, 25, 'transferencia', 10, 'hdajs', 'exitosa'),
+(34, '2023-12-01 13:25:25', 54, NULL, 'transferencia', 606, 'Pago atrasado de prestamo', 'exitosa'),
+(35, '2023-12-01 13:26:38', 54, NULL, 'transferencia', 537, 'Pago de prestamo', 'exitosa'),
+(36, '2023-12-01 13:26:38', 54, NULL, 'transferencia', 537, 'Pago de prestamo', 'exitosa');
 
 -- --------------------------------------------------------
 
@@ -462,7 +451,7 @@ CREATE TABLE `usuarios` (
   `respuesta` varchar(50) NOT NULL,
   `fecha_alta` date NOT NULL,
   `fecha_baja` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -493,19 +482,6 @@ INSERT INTO `usuarios` (`ID`, `DNI`, `nombre`, `apellido`, `email`, `fecha_nacim
 (23, 43782497, 'maria', 'gonzalez', 'gonzales@ggmail.com', '1980-06-29', 'a9a98f4315df8cccd5358a671784e1567f9d4cc7', '1179964623', 'jujuy 255', 27437824979, 3, '1a1f58c9adc75e11a9c4c108e39bb79bfb4435ac', '0000-00-00', NULL),
 (24, 15777770, 'Samuel', 'De Luque', 'guapisimo777@gmail.com', '1977-07-07', '7cc7aafa6d650f882d59fa52d7882d608b2a32a8', '1107770777', 'Andorra ', 20157777704, 5, '5740369bbd42b12b5cf604faf00983fe4448203a', '0000-00-00', NULL),
 (25, 17777777, 'Samuel', 'De Luque', 'guapisimo777@gmail.com', '1977-07-07', '1abcde91b934fa469216cf09827123590afa02cb', '1107770777', 'Andorra', 20177777775, 3, 'a0ba9ddf43506bcf5631c9738d02d4d0e7cf91bd', '0000-00-00', NULL),
-(26, 3245897, 'matias', 'herman', 'a@g', '2023-09-03', 'c129b324aee662b04eccf68babba85851346dff9', '12341243', 'mUFASA', 12351663, 1, '95c0282573633eb230f5064039e6b359e05e8752', '0000-00-00', NULL),
-(27, 2147483647, 'jogf', 'gfejo', 'sdopfp@gmail.com', '1998-08-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '34174107', 'gfkgkgs', 2347924379243, 3, 'ded1026bfc9f9200df09909ab59b15b2a3d0c13c', '0000-00-00', NULL),
-(28, 1323123123, 'sghi', 'fgji', 'dqfsdfq@gmail', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '3427923', 'gffgdf', 1231223321312, 2, '1c67455daddaa745740a0bcb41e49859795b507a', '0000-00-00', NULL),
-(29, 1233312132, 'fsdkfskfsdf', 'fsdsdffs', 'sgja@gmail', '2002-12-20', '601f1889667efaebb33b8c12572835da3f027f78', '1321232132', 'fojgdfoo', 1132123213132, 2, '052983ee7dd36eb268b63f9e49b99f1772e839ba', '0000-00-00', NULL),
-(30, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '601f1889667efaebb33b8c12572835da3f027f78', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
-(31, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
-(32, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
-(33, 2147483647, '123132', '123312', 'fdaf@fad', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '132123123', '1233132312', 1231321321, 2, '76139c3a6c4a26b538b872c96caf5172bf50bf2c', '0000-00-00', NULL),
-(34, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
-(35, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
-(36, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
-(37, 2147483647, 'dgbdvg', 'dggd', 'dfgd@hma', '2002-12-20', '0f3fde0103dd44077c040215a2fabd09a097aecc', '35803480508', 'dggdfgd', 56645635234, 2, 'd5dbece041f718ce4cbb2cdd51a567571a9cc28e', '0000-00-00', NULL),
-(38, 12351, 'mas', 'MASD', 'A@asdf', '2023-08-28', 'c129b324aee662b04eccf68babba85851346dff9', '64361', 'asdf', 123451, 1, '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8', '0000-00-00', NULL),
 (39, 1234, 'sadf', 'asdf', 'a@asdf', '2023-08-29', '3da541559918a808c2402bba5012f6c60b27661c', '12341234', '12341234', 1234, 2, '3da541559918a808c2402bba5012f6c60b27661c', '0000-00-00', NULL),
 (40, 9234857, 'matias', 'herman', 'a@gmailcom', '2023-08-30', '92429d82a41e930486c6de5ebda9602d55c39986', '12341234', '12341234', 92348570, 1, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '0000-00-00', NULL),
 (41, 1234123400, 'matias', 'herman', 'a@gmail.com', '2005-08-22', '1ef64cc99ec9cbc83d73bb1f26ca6787a3d8a1ff', '1234123400', '1234123400', 1234123400, 1, '0c422ba64421103f8f58fc3c8676caf9c7c73178', '2023-09-08', NULL),
@@ -595,7 +571,7 @@ ALTER TABLE `credito`
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `pago_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `pago_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `plazo_fijo`
@@ -613,13 +589,13 @@ ALTER TABLE `preguntas`
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `prestamo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `prestamo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `transacciones`
 --
 ALTER TABLE `transacciones`
-  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

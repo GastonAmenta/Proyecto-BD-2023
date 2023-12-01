@@ -17,28 +17,34 @@
             <a class="especial">BIP Empresas</a>
         </div>
     </div>
-
-
-    <table border=1>
-        <tr>
-            <th>Numero de cuota |</th>
-            <th>Monto | </th>
-            <th>Fecha de pago</th>
-            <th>| Estado del pago</th>
-            <th>Pagar</th>
-        </tr>
-        <?php foreach ($rowPays as $pagos) { ?>
+    <div class="back_button" id="atras">
+        <a href="home.php">
+            <i class="fa fa-arrow-left" style="font-size:25px;color:black;font-style:inherit;"> Atras</i>
+        </a>
+    </div>
+    <div class="form_container">
+        <table border=1>
             <tr>
-                <td> <?php echo $pagos['nro_cuota'] ?></td>
-                <td> <?php echo $pagos['monto'] ?></td>
-                <td> <?php echo (substr($pagos['fecha_pago'], 0, 10)); ?></td>
-                <td> <?php echo $pagos['estado_pago'] ?></td>
-                <?php if (date('Y-m-d') >= $pagos['fecha_pago'] && $pagos['fecha_baja'] == NULL) { ?>
-                    <td> <a href="../controllers/api/updatepay.php?id=<?php echo $pagos['pago_id'] ?>"><button class="btn-admin">Pagar</button></a><?php ?></td>
-                <?php } else if ($pagos['fecha_baja'] != NULL) { ?>
-                    <td>Ya pagado</td>
-                <?php } else { ?>
-                    <td> No disponible</td>
-            <?php }
-            } ?>
-    </table>
+                <th>Numero de cuota |</th>
+                <th>Monto | </th>
+                <th>Fecha de pago |</th>
+                <th> Estado del pago |</th>
+                <th>Pagar</th>
+            </tr>
+            <?php foreach ($rowPays as $pagos) { ?>
+                <tr>
+                    <td> <?php echo $pagos['nro_cuota'] ?></td>
+                    <td> <?php echo $pagos['monto'] ?></td>
+                    <td> <?php echo (substr($pagos['fecha_pago'], 0, 10)); ?></td>
+                    <td> <?php echo $pagos['estado_pago'] ?></td>
+                    <?php if (date('Y-m-d') >= $pagos['fecha_pago'] && $pagos['fecha_baja'] == NULL) { ?>
+                        <td> <a href="../controllers/api/updatepay.php?id=<?php echo $pagos['pago_id'] ?>"><button class="btn-admin">Pagar</button></a><?php ?></td>
+                    <?php } else if ($pagos['fecha_baja'] != NULL) { ?>
+                        <td>Ya pagado</td>
+                    <?php } else { ?>
+                        <td> No disponible</td>
+                <?php }
+                } ?>
+        </table>
+    </div>
+</div>

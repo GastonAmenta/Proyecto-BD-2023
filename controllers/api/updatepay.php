@@ -16,6 +16,8 @@ $resultPays = mysqli_query($conn, $sqlPays);
 if (mysqli_num_rows($resultPays) < 0) {
     header("Location: ../home.php");
 } else {
+    //Si esta realizando un pago atrasado
+
     $userid = $_SESSION['user']['ID'];
     $pagoid = $_GET['id'];
     $sqlPays = "SELECT pagos.* 
@@ -86,7 +88,7 @@ if (mysqli_num_rows($resultPays) < 0) {
 
         header("Location: ../loans.php");
     } else {
-
+        // Si esta realizando un pago en tiempo
         $sqlUpdate = "UPDATE pagos SET estado_pago = 'Pagado', fecha_baja = now() WHERE pago_id= $pagoid";
         $resultUpdate = mysqli_query($conn, $sqlUpdate);
         if (!$resultUpdate) {
