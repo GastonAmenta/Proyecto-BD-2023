@@ -31,7 +31,7 @@
             <tr>
                 <td> <?php echo $pagos['nro_cuota'] ?></td>
                 <td> <?php echo $pagos['monto'] ?></td>
-                <td> <?php echo $pagos['fecha_pago'] ?></td>
+                <td> <?php echo (substr($pagos['fecha_pago'], 0, 10)); ?></td>
                 <td> <?php echo $pagos['estado_pago'] ?></td>
                 <?php if (date('Y-m-d') >= $pagos['fecha_pago'] && $pagos['fecha_baja'] == NULL) { ?>
                     <td> <a href="../controllers/api/updatepay.php?id=<?php echo $pagos['pago_id'] ?>"><button class="btn-admin">Pagar</button></a><?php ?></td>

@@ -63,7 +63,7 @@ if (isset($password) && sha1($password) == $_SESSION['user']['clave']) {
                         // MISMA FECHA DENTRO DEL MES SIGUIENTE
                         $fechaMensual = date('Y-m-d', strtotime('+'.$i.' month', strtotime($fechaActual)));
 
-                        $insert_payments_query .= "INSERT INTO pagos(prestamo_id, monto, nro_cuota, fecha_pago, fecha_alta) VALUES('" . $prestamo_id . "', '" . $monto . "', '" . $i . "', '". $fechaMensual ."' , now());";
+                        $insert_payments_query .= "INSERT INTO pagos(prestamo_id, monto, nro_cuota, fecha_pago, fecha_alta) VALUES('" . $prestamo_id . "', '" . $t_intereses . "', '" . $i . "', '". $fechaMensual ."' , now());";
                         $i++;                                                
                     }                    
                     //LIMPIO DESPUES DE QUERY
@@ -82,7 +82,7 @@ if (isset($password) && sha1($password) == $_SESSION['user']['clave']) {
                         }
                     }
 
-                    $update_query = "UPDATE caja_ahorro SET monto_disp = monto_disp + '$monto'";
+                    $update_query = "UPDATE caja_ahorro INNER JOIN usuarios ON caja_ahorro.usuarios_id = usuarios.id SET caja_ahorro.monto_disp = caja_ahorro.monto_disp + '$monto' WHERE usuarios.id = $usuario_id";
                     mysqli_query($conn, $update_query);
                     
                     mysqli_commit($conn);
